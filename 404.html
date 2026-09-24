@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Page Not Found | Kids Park</title>
+
+    <meta name="description"
+        content="Sorry, the page you are looking for could not be found. Return to Kids Park and continue learning and having fun.">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+ <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+
+            font-family: Arial, sans-serif;
+
+            background: #fff8e7;
+
+            color: #263746;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            flex-direction: column;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+
+            background: #ff7043;
+
+            color: white;
+
+            padding: 20px;
+
+            text-align: center;
+        }
+
+
+        .logo {
+
+            font-size: 25px;
+
+            font-weight: bold;
+        }
+
+
+        /* =========================
+           404 CONTENT
+        ========================= */
+
+        .error-container {
+
+            flex: 1;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+        }
+
+
+        .error-box {
+
+            max-width: 650px;
+
+            width: 100%;
+
+            background: white;
+
+            padding: 50px 30px;
+
+            border-radius: 25px;
+
+            box-shadow:
+                0 8px 25px rgba(0, 0, 0, 0.08);
+        }
+
+
+        /* =========================
+           404 NUMBER
+        ========================= */
+
+        .error-number {
+
+            font-size: 110px;
+
+            line-height: 1;
+
+            font-weight: bold;
+
+            color: #ff7043;
+
+            margin-bottom: 15px;
+        }
+
+
+        .error-emoji {
+
+            font-size: 65px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .error-box h1 {
+
+            font-size: 32px;
+
+            color: #263746;
+
+            margin-bottom: 12px;
+        }
+
+
+        .error-box p {
+
+            color: #666;
+
+            font-size: 17px;
+
+            max-width: 500px;
+
+            margin: 0 auto 25px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           BUTTONS
+        ========================= */
+
+        .buttons {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .home-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            background: #ff7043;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 13px 24px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .home-btn:hover {
+
+            background: #e64a19;
+
+            transform: translateY(-2px);
+        }
+
+
+        .back-btn {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            background: #263746;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 13px 24px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .back-btn:hover {
+
+            background: #ff7043;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            background: #263746;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px 20px;
+        }
+
+
+        .footer-logo {
+
+            font-size: 21px;
+
+            font-weight: bold;
+
+            margin-bottom: 12px;
+        }
+
+
+        .footer-links {
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            flex-wrap: wrap;
+
+            gap: 16px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .footer-links a {
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .footer-links a:hover {
+
+            color: #ff7043;
+        }
+
+
+        footer p {
+
+            font-size: 13px;
+
+            color: #ddd;
+        }
+
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+
+            header {
+
+                padding: 17px;
+            }
+
+
+            .logo {
+
+                font-size: 22px;
+            }
+
+
+            .error-container {
+
+                padding: 30px 15px;
+            }
+
+
+            .error-box {
+
+                padding: 40px 20px;
+
+                border-radius: 20px;
+            }
+
+
+            .error-number {
+
+                font-size: 80px;
+            }
+
+
+            .error-emoji {
+
+                font-size: 50px;
+            }
+
+
+            .error-box h1 {
+
+                font-size: 25px;
+            }
+
+
+            .error-box p {
+
+                font-size: 15px;
+            }
+
+
+            .buttons {
+
+                flex-direction: column;
+            }
+
+
+            .home-btn,
+            .back-btn {
+
+                width: 100%;
+
+                max-width: 250px;
+            }
+
+
+            .footer-links {
+
+                gap: 10px 15px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="logo">
+
+            🐣 Kids Park
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         404 CONTENT
+    ========================= -->
+
+    <main class="error-container">
+
+        <div class="error-box">
+
+
+            <div class="error-number">
+
+                404
+
+            </div>
+
+
+            <div class="error-emoji">
+
+                🐻🔍
+
+            </div>
+
+
+            <h1>
+
+                Oops! Page Not Found
+
+            </h1>
+
+
+            <p>
+
+                It looks like the page you are looking for
+                has gone on a little adventure! 🌳
+
+                Don't worry, let's take you back to
+                Kids Park and continue learning and having fun. 🎈
+
+            </p>
+
+
+            <div class="buttons">
+
+
+                <a
+                    href="index.html"
+                    class="home-btn">
+
+                    <i class="fa-solid fa-house"></i>
+
+                    Go to Home
+
+                </a>
+
+
+                <a
+                    href="javascript:history.back()"
+                    class="back-btn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+
+                    Go Back
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================= -->
+
+    <footer>
+
+
+        <div class="footer-logo">
+
+            🐣 Kids Park
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="about.html">
+                About Us
+            </a>
+
+            <a href="privacy.html">
+                Privacy Policy
+            </a>
+
+            <a href="terms.html">
+                Terms & Conditions
+            </a>
+
+            <a href="contact.html">
+                Contact Us
+            </a>
+
+        </div>
+
+
+        <p>
+
+            © <span id="year"></span>
+            Kids Park. All rights reserved.
+
+        </p>
+
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+    </script>
+
+
+</body>
+
+</html>

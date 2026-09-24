@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+       <title>Kids Learning - Fun Educational Activities | Kids Park</title>
+
+    <meta name="description"
+        content="Explore fun and educational learning activities for kids at Kids Park. Learn about animals, birds, fruits, vegetables, sea animals, numbers, colors, shapes, sports, food, days, months and more.">
+
+    <meta name="keywords"
+        content="kids learning, learning for kids, educational activities for kids, kids education, learn animals for kids, birds for kids, fruits for kids, vegetables for kids, sea animals for kids, numbers for kids, colors for kids, shapes for kids, sports for kids, food for kids, days for kids, months for kids, Kids Park">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="Kids Park">
+
+    <link rel="shortcut icon" href="../Kids-Park-complete-v3/favicon.ico" type="image/x-icon">
+
+
+    <style>
+
+        /* =====================================================
+           RESET
+        ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        /* =====================================================
+           BODY
+        ===================================================== */
+
+        body {
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            background: #fffaf3;
+
+            color: #263746;
+
+            line-height: 1.6;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        header {
+
+            background: #ffffff;
+
+            /* padding: 28px 15px; */
+
+            text-align: center;
+
+            border-bottom: 1px solid #f0e6dc;
+        }
+
+
+        header h1 {
+
+            font-size: 28px;
+
+            color: #ff7055;
+
+            margin-bottom: 3px;
+        }
+
+
+        header p {
+
+            font-size: 17px;
+
+            color: #263746;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        nav {
+
+            background: #ffffff;
+
+            padding: 14px 10px;
+
+            text-align: center;
+
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+
+            position: static;
+
+            top: 0;
+
+            z-index: 100;
+        }
+
+
+        nav a {
+
+            text-decoration: none;
+
+            color: #263746;
+
+            font-weight: bold;
+
+            margin: 0 12px;
+
+            transition: 0.2s;
+        }
+
+
+        nav a:hover {
+
+            color: #ff7055;
+        }
+
+
+        /* =====================================================
+           MAIN CONTAINER
+        ===================================================== */
+
+        .container {
+
+            width: 92%;
+
+            max-width: 1250px;
+
+            margin: 0 auto;
+
+            padding: 20px 0 50px;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .intro {
+
+            text-align: center;
+
+            padding: 25px 10px 10px;
+        }
+
+
+        .intro h2 {
+
+            font-size: 32px;
+
+            color: #263746;
+
+            margin-bottom: 8px;
+        }
+
+
+        .intro p {
+
+            color: #666;
+
+            font-size: 16px;
+        }
+
+
+        /* =====================================================
+           CATEGORY
+        ===================================================== */
+
+        .category {
+
+            margin: 45px 0;
+        }
+
+
+        /* =====================================================
+           CATEGORY HEADER
+        ===================================================== */
+
+        .section-header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 18px;
+
+            border-left: 5px solid #ff7055;
+
+            padding-left: 12px;
+        }
+
+
+        .section-header h2 {
+
+            font-size: 27px;
+
+            color: #263746;
+        }
+
+
+        /* =====================================================
+           CARDS
+        ===================================================== */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 18px;
+        }
+
+
+        /* =====================================================
+           CARD
+        ===================================================== */
+
+        .card {
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            padding: 15px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+
+            overflow: hidden;
+        }
+
+
+        .card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: 0 9px 20px rgba(0, 0, 0, 0.12);
+        }
+
+
+        /* =====================================================
+           IMAGE
+        ===================================================== */
+
+        .card img {
+
+            width: 130px;
+
+            height: 130px;
+
+            object-fit: contain;
+
+            display: block;
+
+            margin: auto;
+        }
+
+
+        /* =====================================================
+           EMOJI
+        ===================================================== */
+
+        .card-emoji {
+
+            width: 130px;
+
+            height: 130px;
+
+            margin: auto;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 78px;
+        }
+
+
+        /* =====================================================
+           CARD TITLE
+        ===================================================== */
+
+        .card h3 {
+
+            margin: 10px 0;
+
+            font-size: 18px;
+
+            color: #263746;
+        }
+
+
+        /* =====================================================
+           LISTEN BUTTON
+        ===================================================== */
+
+        .voice-btn {
+
+            border: none;
+
+            background: #ff7055;
+
+            color: #ffffff;
+
+            padding: 8px 15px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            transition: 0.2s;
+        }
+
+
+        .voice-btn:hover {
+
+            background: #e85d43;
+
+            transform: scale(1.04);
+        }
+
+
+        /* =====================================================
+           VIEW MORE
+        ===================================================== */
+
+        .view-more {
+
+            display: block;
+
+            width: fit-content;
+
+            margin: 22px auto 0;
+
+            background: #263746;
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            padding: 10px 22px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .view-more:hover {
+
+            background: #ff7055;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background: #263746;
+
+            color: #ffffff;
+
+            text-align: center;
+
+            padding: 28px 15px;
+
+            margin-top: 30px;
+        }
+
+
+        footer p {
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (max-width: 1000px) {
+
+            .cards {
+
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+
+            .card img,
+            .card-emoji {
+
+                width: 115px;
+
+                height: 115px;
+            }
+
+
+            .card-emoji {
+
+                font-size: 68px;
+            }
+
+        }
+
+
+        /* =====================================================
+           SMALL TABLET
+        ===================================================== */
+
+        @media (max-width: 800px) {
+
+            .cards {
+
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+
+            header h1 {
+
+                font-size: 32px;
+            }
+
+
+            .section-header h2 {
+
+                font-size: 24px;
+            }
+
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 600px) {
+
+            header {
+
+                padding: 22px 12px;
+            }
+
+
+            header h1 {
+
+                font-size: 27px;
+            }
+
+
+            header p {
+
+                font-size: 14px;
+            }
+
+
+            nav {
+
+                padding: 11px 5px;
+
+                overflow-x: auto;
+
+                white-space: nowrap;
+            }
+
+
+            nav a {
+
+                font-size: 13px;
+
+                margin: 0 7px;
+            }
+
+
+            .container {
+
+                width: 94%;
+
+                padding-top: 10px;
+            }
+
+
+            .intro {
+
+                padding: 22px 5px 5px;
+            }
+
+
+            .intro h2 {
+
+                font-size: 25px;
+            }
+
+
+            .intro p {
+
+                font-size: 14px;
+            }
+
+
+            .category {
+
+                margin: 32px 0;
+            }
+
+
+            .section-header {
+
+                margin-bottom: 14px;
+
+                padding-left: 9px;
+            }
+
+
+            .section-header h2 {
+
+                font-size: 21px;
+            }
+
+
+            .cards {
+
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+
+            .card {
+
+                padding: 10px;
+
+                border-radius: 16px;
+            }
+
+
+            .card img,
+            .card-emoji {
+
+                width: 100px;
+
+                height: 100px;
+            }
+
+
+            .card-emoji {
+
+                font-size: 60px;
+            }
+
+
+            .card h3 {
+
+                font-size: 15px;
+
+                margin: 8px 0;
+            }
+
+
+            .voice-btn {
+
+                font-size: 12px;
+
+                padding: 7px 11px;
+            }
+
+
+            .view-more {
+
+                font-size: 13px;
+
+                padding: 9px 18px;
+            }
+
+
+            footer {
+
+                padding: 22px 10px;
+            }
+
+        }
+
+
+        /* =====================================================
+           VERY SMALL MOBILE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .cards {
+
+                gap: 9px;
+            }
+
+
+            .card img,
+            .card-emoji {
+
+                width: 90px;
+
+                height: 90px;
+            }
+
+
+            .card-emoji {
+
+                font-size: 52px;
+            }
+
+
+            .card h3 {
+
+                font-size: 14px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header>
+
+    <h1>🐣 Kids Learning 🎓</h1>
+
+    <!-- <p>
+        Learn, Listen, Explore and Have Fun!
+    </p> -->
+
+</header>
+
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <a href="index.html">Home</a>
+
+    <a href="#alphabet">Alphabet</a>
+
+    <a href="#animals">Animals</a>
+
+    <a href="#numbers">Numbers</a>
+
+    <!-- <a href="#fruits">Fruits</a>
+
+    <a href="#vegetables">Vegetables</a> -->
+
+</nav>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="container">
+
+
+    <!-- =================================================
+         INTRO
+    ================================================= -->
+
+    <section class="intro">
+
+        <h2>📚 Kids Learning World</h2>
+
+        <p>
+            Explore different learning topics with pictures,
+            names and English pronunciation.
+        </p>
+
+    </section>
+
+
+
+    <!-- =================================================
+         1. ALPHABET
+    ================================================= -->
+
+    <section class="category" id="alphabet">
+
+        <div class="section-header">
+
+            <h2>🔤 Alphabet</h2>
+
+        </div>
+
+
+        <div class="cards" id="alphabetCards"></div>
+
+
+        <a href="learning/Alphabet.html" class="view-more">
+            View More Alphabet →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         2. ANIMALS
+    ================================================= -->
+
+    <section class="category" id="animals">
+
+        <div class="section-header">
+
+            <h2>🐶 Animals</h2>
+
+        </div>
+
+
+        <div class="cards" id="animalsCards"></div>
+
+
+        <a href="learning/animals.html" class="view-more">
+            View More Animals →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         3. NUMBERS
+    ================================================= -->
+
+    <section class="category" id="numbers">
+
+        <div class="section-header">
+
+            <h2>🔢 Numbers</h2>
+
+        </div>
+
+
+        <div class="cards" id="numbersCards"></div>
+
+
+        <a href="learning/numbers.html" class="view-more">
+            View More Numbers →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         4. FRUITS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🍎 Fruits</h2>
+
+        </div>
+
+
+        <div class="cards" id="fruitsCards"></div>
+
+
+        <a href="learning/fruits.html" class="view-more">
+            View More Fruits →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         5. VEGETABLES
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🥕 Vegetables</h2>
+
+        </div>
+
+
+        <div class="cards" id="vegetablesCards"></div>
+
+
+        <a href="learning/vegetable.html" class="view-more">
+            View More Vegetables →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         6. SEA ANIMALS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🌊 Sea Animals</h2>
+
+        </div>
+
+
+        <div class="cards" id="seaAnimalsCards"></div>
+
+
+        <a href="learning/sea-animals.html" class="view-more">
+            View More Sea Animals →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         7. BIRDS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🐦 Birds</h2>
+
+        </div>
+
+
+        <div class="cards" id="birdsCards"></div>
+
+
+        <a href="learning/birds.html" class="view-more">
+            View More Birds →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         8. RELATIONSHIPS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>👨‍👩‍👧 Relationships</h2>
+
+        </div>
+
+
+        <div class="cards" id="relationshipsCards"></div>
+
+
+        <a href="learning/relationship.html" class="view-more">
+            View More Relationships →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         9. VEHICLES
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🚗 Vehicles</h2>
+
+        </div>
+
+
+        <div class="cards" id="vehiclesCards"></div>
+
+
+        <a href="learning/vehicles.html" class="view-more">
+            View More Vehicles →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         10. FLOWERS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🌸 Flowers</h2>
+
+        </div>
+
+
+        <div class="cards" id="flowersCards"></div>
+
+
+        <a href="learning/flower.html" class="view-more">
+            View More Flowers →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         11. SHAPES
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🔷 Shapes</h2>
+
+        </div>
+
+
+        <div class="cards" id="shapesCards"></div>
+
+
+        <a href="learning/shapes.html" class="view-more">
+            View More Shapes →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         12. COUNTRY FLAGS
+    ================================================= -->
+
+    <!-- <section class="category">
+
+        <div class="section-header">
+
+            <h2>🌍 Country Flags</h2>
+
+        </div>
+
+
+        <div class="cards" id="flagsCards"></div>
+
+
+        <a href="flags.html" class="view-more">
+            View More Country Flags →
+        </a>
+
+    </section>
+
+ -->
+
+    <!-- =================================================
+         13. DAYS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>📅 Days</h2>
+
+        </div>
+
+
+        <div class="cards" id="daysCards"></div>
+
+
+        <a href="learning/days.html" class="view-more">
+            View More Days →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         14. MONTHS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🗓️ Months</h2>
+
+        </div>
+
+
+        <div class="cards" id="monthsCards"></div>
+
+
+        <a href="learning/month.html" class="view-more">
+            View More Months →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         15. COLOURS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🎨 Colours</h2>
+
+        </div>
+
+
+        <div class="cards" id="coloursCards"></div>
+
+
+        <a href="learning/colours.html" class="view-more">
+            View More Colours →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         16. SPORTS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>⚽ Sports</h2>
+
+        </div>
+
+
+        <div class="cards" id="sportsCards"></div>
+
+
+        <a href="learning/sports.html" class="view-more">
+            View More Sports →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         17. SCHOOL THINGS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🎒 School Things</h2>
+
+        </div>
+
+
+        <div class="cards" id="schoolCards"></div>
+
+
+        <a href="learning/school-thinks.html" class="view-more">
+            View More School Things →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         18. FOODS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>🍕 Foods</h2>
+
+        </div>
+
+
+        <div class="cards" id="foodsCards"></div>
+
+
+        <a href="learning/foods.html" class="view-more">
+            View More Foods →
+        </a>
+
+    </section>
+
+
+    <!-- =================================================
+         19. BODY PARTS
+    ================================================= -->
+
+    <section class="category">
+
+        <div class="section-header">
+
+            <h2>👁️ Body Parts</h2>
+
+        </div>
+
+
+        <div class="cards" id="bodyCards"></div>
+
+
+        <a href="learning/body-parts.html" class="view-more">
+            View More Body Parts →
+        </a>
+
+    </section>
+
+
+
+    <!-- =================================================
+         20. STICKERS
+    ================================================= -->
+
+    <!-- <section class="category">
+
+        <div class="section-header">
+
+            <h2>⭐ Stickers</h2>
+
+        </div>
+
+
+        <div class="cards" id="stickersCards"></div>
+
+
+        <a href="stickers.html" class="view-more">
+            View More Stickers →
+        </a>
+
+    </section> -->
+
+
+
+    <!-- =================================================
+         21. MORE LEARNING
+    ================================================= -->
+
+    <!-- <section class="category">
+
+        <div class="section-header">
+
+            <h2>✨ More Learning</h2>
+
+        </div>
+
+
+        <div class="cards" id="moreCards"></div>
+
+
+        <a href="more-learning.html" class="view-more">
+            View More Learning →
+        </a>
+
+    </section> -->
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p>
+        🐣 Kids Learning • Learn and Have Fun!
+    </p>
+    <p>
+        Thanks for PlayThink 🙏
+    </p>
+
+    <p>
+        © 2026 Kids Learning
+    </p>
+
+</footer>
+
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+
+/* =====================================================
+   HELPER
+===================================================== */
+
+function createCards(containerId, items) {
+
+    const container =
+        document.getElementById(containerId);
+
+
+    if (!container) return;
+
+
+    container.innerHTML = "";
+
+
+    items.slice(0, 5).forEach(function(item) {
+
+
+        const card =
+            document.createElement("div");
+
+
+        card.className = "card";
+
+
+        /* IMAGE */
+
+        if (item.image) {
+
+            card.innerHTML = `
+
+                <img
+                    src="${item.image}"
+                    alt="${item.name}"
+                    loading="lazy"
+                >
+
+                <h3>${item.name}</h3>
+
+                <button
+                    class="voice-btn"
+                    onclick="speak('${item.name}')"
+                >
+                    🔊 Listen
+                </button>
+
+            `;
+
+        }
+
+
+        /* EMOJI */
+
+        else {
+
+            card.innerHTML = `
+
+                <div class="card-emoji">
+                    ${item.emoji}
+                </div>
+
+                <h3>${item.name}</h3>
+
+                <button
+                    class="voice-btn"
+                    onclick="speak('${item.name}')"
+                >
+                    🔊 Listen
+                </button>
+
+            `;
+
+        }
+
+
+        container.appendChild(card);
+
+    });
+
+}
+
+
+
+/* =====================================================
+   1. ALPHABET
+===================================================== */
+
+const alphabet = [
+
+    { name: "A", emoji: "🅰️" },
+
+    { name: "B", emoji: "🅱️" },
+
+    { name: "C", emoji: "©️" },
+
+    { name: "D", emoji: "🔤" },
+
+    { name: "E", emoji: "🔤" }
+
+];
+
+
+
+/* =====================================================
+   2. ANIMALS
+===================================================== */
+
+const animals = [
+
+    {
+        name: "Zebra",
+        image: "learning/animals/1.png"
+    },
+
+    {
+        name: "Tiger",
+        image: "learning/animals/10.png"
+    },
+
+    {
+        name: "Squirrel",
+        image: "learning/animals/22.png"
+    },
+
+    {
+        name: "Cow",
+        image: "learning/animals/13.png"
+    },
+
+    {
+        name: "Goat",
+        image: "learning/animals/12.png"
+    }
+
+];
+
+
+
+/* =====================================================
+   3. NUMBERS
+===================================================== */
+
+const numbers = [
+
+    { name: "One", emoji: "1️⃣" },
+
+    { name: "Two", emoji: "2️⃣" },
+
+    { name: "Three", emoji: "3️⃣" },
+
+    { name: "Four", emoji: "4️⃣" },
+
+    { name: "Five", emoji: "5️⃣" }
+
+];
+
+
+
+/* =====================================================
+   4. FRUITS
+===================================================== */
+
+const fruits = [
+
+    {
+        name: "Papaya",
+        image: "learning/fruits/78.png"
+    },
+
+    {
+        name: "Watermelon",
+        image: "learning/fruits/79.png"
+    },
+
+    {
+        name: "Orange",
+        image: "learning/fruits/82.png"
+    },
+
+    {
+        name: "Apple",
+        image: "learning/fruits/85.png"
+    },
+
+    {
+        name: "Kiwi",
+        image: "learning/fruits/88.png"
+    }
+
+];
+
+
+
+/* =====================================================
+   5. VEGETABLES
+===================================================== */
+
+const vegetables = [
+
+    {
+        name: "Cauliflower",
+        image: "learning/vegetables/51.png"
+    },
+
+    {
+        name: "Onion",
+        image: "learning/vegetables/54.png"
+    },
+
+    {
+        name: "Potato",
+        image: "learning/vegetables/56.png"
+    },
+
+    {
+        name: "Red Chilli",
+        image: "learning/vegetables/58.png"
+    },
+
+    {
+        name: "Bitter Gourd",
+        image: "learning/vegetables/60.png"
+    }
+
+];
+
+
+
+/* =====================================================
+   6. SEA ANIMALS
+===================================================== */
+
+const seaAnimals = [
+
+    {
+        name: "Shark",
+        image: "learning/seaanimals/132.png"
+    },
+
+    {
+        name: "Jellyfish",
+        image: "learning/seaanimals/131.png"
+    },
+
+    {
+        name: "Penguin",
+        image: "learning/seaanimals/134.png"
+    },
+
+    {
+        name: "Starfish",
+        image: "learning/seaanimals/136.png"
+    },
+
+    {
+        name: "turtle",
+        image: "learning/seaanimals/138.png"
+    }
+
+];
+
+
+
+/* =====================================================
+   7. BIRDS
+===================================================== */
+
+const birds = [
+
+    {
+        name: "Dove",
+        image: "learning/birds/30.png"
+    },
+
+    {
+        name: "Kingfisher",
+        image: "learning/birds/32.png"
+    },
+
+    {
+        name: "Owl",
+        image: "learning/birds/34.png"
+    },
+
+    {
+        name: "Pigeon",
+        image: "learning/birds/36.png"
+    },
+
+    {
+        name: "Hen",
+        image: "learning/birds/38.png"
+    }
+
+];
+
+
+
+/* =====================================================
+   8. RELATIONSHIPS
+===================================================== */
+
+const relationships = [
+
+    { name: "Father", emoji: "👨" },
+
+    { name: "Mother", emoji: "👩" },
+
+    { name: "Brother", emoji: "👦" },
+
+    { name: "Sister", emoji: "👧" },
+
+    { name: "Grandfather", emoji: "👴" }
+
+];
+
+
+
+/* =====================================================
+   9. VEHICLES
+===================================================== */
+
+const vehicles = [
+
+    { name: "Car", emoji: "🚗" },
+
+    { name: "Bus", emoji: "🚌" },
+
+    { name: "Train", emoji: "🚆" },
+
+    { name: "Bicycle", emoji: "🚲" },
+
+    { name: "Airplane", emoji: "✈️" }
+
+];
+
+
+
+/* =====================================================
+   10. FLOWERS
+===================================================== */
+
+const flowers = [
+
+    { name: "Rose", emoji: "🌹" },
+
+    { name: "Sunflower", emoji: "🌻" },
+
+    { name: "Tulip", emoji: "🌷" },
+
+    { name: "Lotus", emoji: "🪷" },
+
+    { name: "Jasmine", emoji: "🌼" }
+
+];
+
+
+
+/* =====================================================
+   11. SHAPES
+===================================================== */
+
+const shapes = [
+
+    { name: "Circle", emoji: "🔴" },
+
+    { name: "Square", emoji: "🟦" },
+
+    { name: "Triangle", emoji: "🔺" },
+
+    { name: "Star", emoji: "⭐" },
+
+    { name: "Heart", emoji: "❤️" }
+
+];
+
+
+
+/* =====================================================
+   12. COUNTRY FLAGS
+===================================================== */
+
+const flags = [
+
+    { name: "India", emoji: "🇮🇳" },
+
+    { name: "United States", emoji: "🇺🇸" },
+
+    { name: "United Kingdom", emoji: "🇬🇧" },
+
+    { name: "Japan", emoji: "🇯🇵" },
+
+    { name: "Canada", emoji: "🇨🇦" }
+
+];
+
+
+
+/* =====================================================
+   13. DAYS
+===================================================== */
+
+const days = [
+
+    { name: "Monday", emoji: "📅" },
+
+    { name: "Tuesday", emoji: "😉" },
+
+    { name: "Wednesday", emoji: "📅" },
+
+    { name: "Thursday", emoji: "📅" },
+
+    { name: "Friday", emoji: "👪" }
+
+];
+
+
+
+/* =====================================================
+   14. MONTHS
+===================================================== */
+
+const months = [
+
+    { name: "January", emoji: "🗓️" },
+
+    { name: "February", emoji: "🐣" },
+
+    { name: "March", emoji: "🗓️" },
+
+    { name: "April", emoji: "💐" },
+
+    { name: "May", emoji: "🗓️" }
+
+];
+
+
+
+/* =====================================================
+   15. COLOURS
+===================================================== */
+
+const colours = [
+
+    { name: "Red", emoji: "🔴" },
+
+    { name: "Blue", emoji: "🔵" },
+
+    { name: "Green", emoji: "🟢" },
+
+    { name: "Yellow", emoji: "🟡" },
+
+    { name: "Purple", emoji: "🟣" }
+
+];
+
+
+
+/* =====================================================
+   16. SPORTS
+===================================================== */
+
+const sports = [
+
+    { name: "Football", emoji: "⚽" },
+
+    { name: "Cricket", emoji: "🏏" },
+
+    { name: "Basketball", emoji: "🏀" },
+
+    { name: "Tennis", emoji: "🎾" },
+
+    { name: "Swimming", emoji: "🏊" }
+
+];
+
+
+
+/* =====================================================
+   17. SCHOOL THINGS
+===================================================== */
+
+const schoolThings = [
+
+    { name: "Book", emoji: "📖" },
+
+    { name: "Pencil", emoji: "✏️" },
+
+    { name: "Eraser", emoji: "🧽" },
+
+    { name: "School Bag", emoji: "🎒" },
+
+    { name: "Ruler", emoji: "📏" }
+
+];
+
+
+
+/* =====================================================
+   18. FOODS
+===================================================== */
+
+const foods = [
+
+    { name: "Pizza", emoji: "🍕" },
+
+    { name: "Burger", emoji: "🍔" },
+
+    { name: "Rice", emoji: "🍚" },
+
+    { name: "Bread", emoji: "🍞" },
+
+    { name: "Ice Cream", emoji: "🍦" }
+
+];
+
+/* =====================================================
+   19. BODY PARTS
+===================================================== */
+
+
+const bodyparts = [
+
+    {
+        name: "Head",
+        image: "learning/bodyparts/119.png"
+    },
+
+    {
+        name: "Eyes",
+        image: "learning/bodyparts/120.png"
+    },
+
+    {
+        name: "Ears",
+        image: "learning/bodyparts/121.png"
+    },
+
+    {
+        name: "Nose",
+        image: "learning/bodyparts/122.png"
+    },
+
+    {
+        name: "Mouth",
+        image: "learning/bodyparts/123.png"
+    }
+
+];
+
+
+
+
+/* =====================================================
+   20. STICKERS
+===================================================== */
+
+const stickers = [
+
+    { name: "Star", emoji: "⭐" },
+
+    { name: "Heart", emoji: "❤️" },
+
+    { name: "Rainbow", emoji: "🌈" },
+
+    { name: "Sun", emoji: "☀️" },
+
+    { name: "Moon", emoji: "🌙" }
+
+];
+
+
+
+/* =====================================================
+   21. MORE LEARNING
+===================================================== */
+
+const moreLearning = [
+
+    { name: "Music", emoji: "🎵" },
+
+    { name: "Art", emoji: "🎨" },
+
+    { name: "Games", emoji: "🎮" },
+
+    { name: "Nature", emoji: "🌳" },
+
+    { name: "Space", emoji: "🚀" }
+
+];
+
+
+
+/* =====================================================
+   CREATE ALL SECTIONS
+===================================================== */
+
+createCards("alphabetCards", alphabet);
+
+createCards("animalsCards", animals);
+
+createCards("numbersCards", numbers);
+
+createCards("fruitsCards", fruits);
+
+createCards("vegetablesCards", vegetables);
+
+createCards("seaAnimalsCards", seaAnimals);
+
+createCards("birdsCards", birds);
+
+createCards("relationshipsCards", relationships);
+
+createCards("vehiclesCards", vehicles);
+
+createCards("flowersCards", flowers);
+
+createCards("shapesCards", shapes);
+
+createCards("flagsCards", flags);
+
+createCards("daysCards", days);
+
+createCards("monthsCards", months);
+
+createCards("coloursCards", colours);
+
+createCards("sportsCards", sports);
+
+createCards("schoolCards", schoolThings);
+
+createCards("foodsCards", foods);
+createCards("bodyCards", bodyparts);
+
+createCards("stickersCards", stickers);
+
+createCards("moreCards", moreLearning);
+
+
+
+/* =====================================================
+   ENGLISH VOICE
+===================================================== */
+
+function speak(text) {
+
+    speechSynthesis.cancel();
+
+
+    const voice =
+        new SpeechSynthesisUtterance(text);
+
+
+    voice.lang = "en-US";
+
+    voice.rate = 0.85;
+
+    voice.pitch = 1;
+
+    voice.volume = 1;
+
+
+    speechSynthesis.speak(voice);
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>

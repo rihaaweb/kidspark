@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <title>Kids Park - Fun Stories for Kids</title>
+
+    <meta name="description"
+        content="Kids Park is a fun website for kids with animal stories, moral stories, bedtime stories, funny stories, adventure stories, princess stories and more. Enjoy fun and entertaining stories for children.">
+
+    <meta name="keywords"
+        content="Kids Park, fun stories for kids, kids stories, children's stories, bedtime stories, moral stories for kids, animal stories, funny stories for kids, princess stories, adventure stories">
+
+    <meta name="robots" content="index, follow">
+
+    <meta name="author" content="Kids Park">
+
+
+    <link rel="stylesheet" href="style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
+    <div class="container header-content">
+
+        <a href="index.html" class="logo">
+            🐣 Kids Park
+        </a>
+
+        <nav class="navbar" id="mainNavbar">
+            <a href="#home">Home</a>
+            <a href="#stories"> Stories</a>
+            <a href="#categories">Categories</a>
+            <a href="learning.html">Learning</a>
+            <!-- <a href="">Quiz</a> -->
+            <!-- <a href="">Buy Ebooks</a> -->
+            
+        </nav>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="container hero-content">
+
+        <div class="hero-text">
+
+            <span class="hero-badge">
+                ✨ Welcome to Kids Park
+            </span>
+
+            <h1>
+                Read. Imagine.
+                <span>Have Fun!</span>
+            </h1>
+
+            <p>
+                Discover fun, simple and colorful stories
+                created especially for little readers.
+            </p>
+
+            <a href="#stories" class="primary-button">
+                📖 Explore Stories
+            </a>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <div class="sun">☀️</div>
+
+            <div class="cloud cloud-one">☁️</div>
+
+            <div class="cloud cloud-two">☁️</div>
+
+            <div class="hero-book">
+                📚
+                <span>Kids Park</span>
+            </div>
+
+            <div class="grass"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FUTURE ADS ================= -->
+<!-- 
+<section class="section">
+
+    <div class="container">
+
+        <div class="ad-section">
+
+            <div class="ad-icon">
+                📢
+            </div>
+
+            <h2>
+                Advertisement
+            </h2>
+
+            <p>
+                Ad space coming soon.
+            </p>
+
+            <small>
+                This area is reserved for future advertisements
+                after website approval.
+            </small>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+
+
+
+
+
+<!-- ================= CATEGORIES ================= -->
+
+<section class="section" id="categories">
+
+    <div class="categories">
+
+    <button class="category-card" data-category="Animal">
+        <span>🐰</span>
+        <strong>Animal</strong>
+        <small><span class="category-count">0</span> Stories</small>
+    </button>
+
+    <button class="category-card" data-category="Bedtime">
+        <span>🌙</span>
+        <strong>Bedtime</strong>
+        <small><span class="category-count">0</span> Stories</small>
+    </button>
+
+    <button class="category-card" data-category="Moral">
+        <span>💛</span>
+        <strong>Moral</strong>
+        <small><span class="category-count">0</span> Stories</small>
+    </button>
+
+    <button class="category-card" data-category="Adventure">
+        <span>🚀</span>
+        <strong>Adventure</strong>
+        <small><span class="category-count">0</span> Stories</small>
+    </button>
+
+    <button class="category-card" data-category="Funny">
+        <span>😂</span>
+        <strong>Funny</strong>
+        <small><span class="category-count">0</span> Stories</small>
+    </button>
+
+    <button class="category-card" data-category="Princess">
+        <span>👑</span>
+        <strong>Princess</strong>
+        <small><span class="category-count">0</span> Stories</small>
+    </button>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= STORIES ================= -->
+
+<section class="section stories-section" id="stories">
+
+    <div class="container">
+
+        <div class="section-title story-heading">
+
+            <div>
+                <h2>
+    Featured 
+    <span class="featured-count">0 Stories 📚</span>
+</h2>
+
+                <p>
+                    Pick a story and start your adventure.
+                </p>
+            </div>
+
+            <button id="showAll" class="secondary-button">
+                Show All
+            </button>
+
+        </div>
+
+        <div class="story-search" role="search">
+            <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            <input
+                type="search"
+                id="storySearch"
+                placeholder="Search stories..."
+                aria-label="Search stories"
+                autocomplete="off"
+            >
+            <button id="clearSearch" class="search-clear" type="button" aria-label="Clear search" hidden>
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <p id="searchResultCount" class="search-result-count" aria-live="polite"></p>
+
+        <div id="storyGrid" class="story-grid">
+
+            <!-- JavaScript creates stories here -->
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FUTURE ADS ================= -->
+<!-- 
+<section class="section">
+
+    <div class="container">
+
+        <div class="ad-section">
+
+            <div class="ad-icon">
+                📢
+            </div>
+
+            <h2>
+                Advertisement
+            </h2>
+
+            <p>
+                Ad space coming soon.
+            </p>
+
+            <small>
+                This area is reserved for future advertisements
+                after website approval.
+            </small>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+
+
+<!-- ================= SIMPLE CTA ================= -->
+
+<section class="section">
+
+    <div class="container">
+
+        <div class="cta">
+
+            <h2>
+                Kids Learning World 🎓
+            </h2>
+
+            <p>
+                Explore different learning topics with pictures, names and English pronunciation.
+            </p>
+
+            <a href="learning.html" class="primary-button">
+                Start
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="container footer-content">
+
+        <div class="logo">
+            🐣 Kids Park
+        </div>
+
+        <div class="footer-links">
+
+            <a href="#home">Home</a>
+
+            <a href="about.html">About Us</a>
+
+            <a href="privacy.html">Privacy Policy</a>
+
+            <a href="terms.html">Terms & Conditions</a>
+
+            <a href="contact.html">Contact Us</a>
+
+        </div>
+
+        <p>
+            © <span id="year"></span> Kids Park. All rights reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
