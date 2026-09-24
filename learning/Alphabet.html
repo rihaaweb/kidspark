@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Alphabet for Kids - Learn A to Z | Kids Park</title>
+
+<meta name="description"
+    content="Learn the English alphabet from A to Z with Kids Park. Fun and simple alphabet learning activities for kids with colorful letters, words and sounds.">
+
+<meta name="keywords"
+    content="alphabet for kids, learn ABC, ABC for kids, English alphabet for kids, A to Z for kids, alphabet learning, letters for kids, learn letters, Kids Park">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="Kids Park">
+
+
+<!-- ================= FONT AWESOME ================= -->
+
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<!-- ================= FAVICON ================= -->
+
+<link
+    rel="shortcut icon"
+    href="../favicon.ico"
+    type="image/x-icon">
+
+
+<style>
+
+    /* ================= RESET ================= */
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+
+    /* ================= BODY ================= */
+
+    body {
+
+        font-family: Arial, sans-serif;
+
+        background: #fff8e7;
+
+        color: #333;
+
+    }
+
+
+    /* ================= ICON ================= */
+
+    i {
+        color: white;
+    }
+
+
+    /* ================= CONTAINER ================= */
+
+    .container {
+
+        width: 92%;
+
+        max-width: 1200px;
+
+        margin: 35px auto;
+
+    }
+
+
+    /* ================= PAGE TITLE ================= */
+
+    .page-title {
+
+        text-align: center;
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .page-title h2 {
+
+        font-size: 32px;
+
+        color: #263746;
+
+        margin-bottom: 8px;
+
+    }
+
+
+    .page-title p {
+
+        font-size: 16px;
+
+        color: #555;
+
+        line-height: 1.6;
+
+    }
+
+
+    /* ================= SEARCH ================= */
+
+    .search-box {
+
+        max-width: 500px;
+
+        margin: 0 auto 35px;
+
+    }
+
+
+    .search-box input {
+
+        width: 100%;
+
+        padding: 14px 20px;
+
+        border: 2px solid #ddd;
+
+        border-radius: 30px;
+
+        font-size: 16px;
+
+        outline: none;
+
+        background: white;
+
+    }
+
+
+    .search-box input:focus {
+
+        border-color: #ff7043;
+
+    }
+
+
+    /* ================= ALPHABET GRID ================= */
+
+    .alphabet-grid {
+
+        display: grid;
+
+        grid-template-columns: repeat(5, 1fr);
+
+        gap: 20px;
+
+    }
+
+
+    /* ================= ALPHABET CARD ================= */
+
+    .alphabet-card {
+
+        background: white;
+
+        padding: 25px 18px;
+
+        border-radius: 20px;
+
+        text-align: center;
+
+        box-shadow:
+            0 5px 15px rgba(0, 0, 0, 0.10);
+
+        transition: 0.3s;
+
+    }
+
+
+    .alphabet-card:hover {
+
+        transform: translateY(-6px);
+
+        box-shadow:
+            0 10px 25px rgba(0, 0, 0, 0.15);
+
+    }
+
+
+    /* ================= BIG LETTER ================= */
+
+    .big-letter {
+
+        font-size: 90px;
+
+        font-weight: bold;
+
+        line-height: 1;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    /* ================= WORD ================= */
+
+    .alphabet-card p {
+
+        font-size: 17px;
+
+        font-weight: bold;
+
+        margin-bottom: 16px;
+
+        line-height: 1.4;
+
+    }
+
+
+    /* ================= LISTEN BUTTON ================= */
+
+    .voice-btn {
+
+        border: none;
+
+        color: white;
+
+        padding: 9px 17px;
+
+        border-radius: 25px;
+
+        cursor: pointer;
+
+        font-size: 14px;
+
+        font-weight: bold;
+
+        transition: 0.2s;
+
+    }
+
+
+    .voice-btn:hover {
+
+        transform: scale(1.05);
+
+        filter: brightness(0.9);
+
+    }
+
+
+    .voice-btn i {
+
+        margin-right: 5px;
+
+    }
+
+
+    /* ================= NO RESULT ================= */
+
+    .no-result {
+
+        grid-column: 1 / -1;
+
+        text-align: center;
+
+        padding: 50px 20px;
+
+        font-size: 18px;
+
+        color: #777;
+
+        background: white;
+
+        border-radius: 20px;
+
+    }
+
+
+    /* ================= BACK BUTTON ================= */
+
+    .back-button {
+
+        display: block;
+
+        width: fit-content;
+
+        margin: 40px auto 0;
+
+        background: #ff7043;
+
+        color: white;
+
+        text-decoration: none;
+
+        padding: 11px 25px;
+
+        border-radius: 25px;
+
+        font-weight: bold;
+
+        transition: 0.2s;
+
+    }
+
+
+    .back-button:hover {
+
+        background: #e64a19;
+
+        transform: translateY(-2px);
+
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+
+        margin-top: 50px;
+
+        background: #263746;
+
+        color: white;
+
+        text-align: center;
+
+        padding: 25px;
+
+    }
+
+
+    footer p {
+
+        font-size: 15px;
+
+    }
+
+
+    /* ================= TABLET ================= */
+
+    @media (max-width: 1000px) {
+
+        .alphabet-grid {
+
+            grid-template-columns: repeat(4, 1fr);
+
+        }
+
+    }
+
+
+    /* ================= SMALL TABLET ================= */
+
+    @media (max-width: 800px) {
+
+        .alphabet-grid {
+
+            grid-template-columns: repeat(3, 1fr);
+
+        }
+
+    }
+
+
+    /* ================= MOBILE ================= */
+
+    @media (max-width: 600px) {
+
+        .container {
+
+            width: 94%;
+
+            margin: 25px auto;
+
+        }
+
+
+        .page-title {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .page-title h2 {
+
+            font-size: 26px;
+
+        }
+
+
+        .page-title p {
+
+            font-size: 14px;
+
+        }
+
+
+        .search-box {
+
+            margin-bottom: 25px;
+
+        }
+
+
+        .search-box input {
+
+            padding: 12px 16px;
+
+            font-size: 14px;
+
+        }
+
+
+        .alphabet-grid {
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 12px;
+
+        }
+
+
+        .alphabet-card {
+
+            padding: 20px 10px;
+
+            border-radius: 16px;
+
+        }
+
+
+        .big-letter {
+
+            font-size: 65px;
+
+            margin-bottom: 14px;
+
+        }
+
+
+        .alphabet-card p {
+
+            font-size: 14px;
+
+            margin-bottom: 13px;
+
+        }
+
+
+        .voice-btn {
+
+            font-size: 12px;
+
+            padding: 7px 11px;
+
+        }
+
+
+        .back-button {
+
+            font-size: 14px;
+
+            padding: 10px 20px;
+
+        }
+
+    }
+
+
+    /* ================= VERY SMALL MOBILE ================= */
+
+    @media (max-width: 380px) {
+
+        .alphabet-grid {
+
+            gap: 10px;
+
+        }
+
+
+        .alphabet-card {
+
+            padding: 18px 7px;
+
+        }
+
+
+        .big-letter {
+
+            font-size: 55px;
+
+        }
+
+
+        .alphabet-card p {
+
+            font-size: 13px;
+
+        }
+
+
+        .voice-btn {
+
+            font-size: 11px;
+
+            padding: 6px 9px;
+
+        }
+
+    }
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <div class="page-title">
+
+        <h2>🔤 Learn Alphabets</h2>
+
+        <p>
+            Learn A to Z letters with colorful words and English pronunciation.
+        </p>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search alphabet or word..."
+            oninput="searchAlphabets()">
+
+    </div>
+
+
+    <!-- ================= ALPHABET GRID ================= -->
+
+    <div
+        class="alphabet-grid"
+        id="alphabetGrid">
+    </div>
+
+
+    <!-- ================= BACK BUTTON ================= -->
+
+    <a
+        href="../learning.html"
+        class="back-button">
+
+        ← Back to Home
+
+    </a>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        🐣 Kids Learning • Learn and Have Fun!
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+    /* ==================================================
+       ALPHABET DATA
+    ================================================== */
+
+    const alphabets = [
+
+        {
+            letter: "A",
+            word: "Apple",
+            color: "#FF5252"
+        },
+
+        {
+            letter: "B",
+            word: "Ball",
+            color: "#42A5F5"
+        },
+
+        {
+            letter: "C",
+            word: "Cat",
+            color: "#66BB6A"
+        },
+
+        {
+            letter: "D",
+            word: "Dog",
+            color: "#FFA726"
+        },
+
+        {
+            letter: "E",
+            word: "Elephant",
+            color: "#AB47BC"
+        },
+
+        {
+            letter: "F",
+            word: "Fish",
+            color: "#26C6DA"
+        },
+
+        {
+            letter: "G",
+            word: "Grapes",
+            color: "#7E57C2"
+        },
+
+        {
+            letter: "H",
+            word: "Horse",
+            color: "#8D6E63"
+        },
+
+        {
+            letter: "I",
+            word: "Ice Cream",
+            color: "#EC407A"
+        },
+
+        {
+            letter: "J",
+            word: "Juice",
+            color: "#FF7043"
+        },
+
+        {
+            letter: "K",
+            word: "Kite",
+            color: "#29B6F6"
+        },
+
+        {
+            letter: "L",
+            word: "Lion",
+            color: "#FFCA28"
+        },
+
+        {
+            letter: "M",
+            word: "Mango",
+            color: "#FF9800"
+        },
+
+        {
+            letter: "N",
+            word: "Nest",
+            color: "#5C6BC0"
+        },
+
+        {
+            letter: "O",
+            word: "Orange",
+            color: "#F4511E"
+        },
+
+        {
+            letter: "P",
+            word: "Parrot",
+            color: "#43A047"
+        },
+
+        {
+            letter: "Q",
+            word: "Queen",
+            color: "#D81B60"
+        },
+
+        {
+            letter: "R",
+            word: "Rabbit",
+            color: "#F06292"
+        },
+
+        {
+            letter: "S",
+            word: "Sun",
+            color: "#FDD835"
+        },
+
+        {
+            letter: "T",
+            word: "Tiger",
+            color: "#FB8C00"
+        },
+
+        {
+            letter: "U",
+            word: "Umbrella",
+            color: "#1E88E5"
+        },
+
+        {
+            letter: "V",
+            word: "Van",
+            color: "#00897B"
+        },
+
+        {
+            letter: "W",
+            word: "Watch",
+            color: "#3949AB"
+        },
+
+        {
+            letter: "X",
+            word: "Xylophone",
+            color: "#8E24AA"
+        },
+
+        {
+            letter: "Y",
+            word: "Yo-Yo",
+            color: "#E53935"
+        },
+
+        {
+            letter: "Z",
+            word: "Zebra",
+            color: "#263238"
+        }
+
+    ];
+
+
+    /* ==================================================
+       GET ALPHABET GRID
+    ================================================== */
+
+    const alphabetGrid =
+        document.getElementById("alphabetGrid");
+
+
+    /* ==================================================
+       SHOW ALPHABETS
+    ================================================== */
+
+    function showAlphabets(list) {
+
+        alphabetGrid.innerHTML = "";
+
+
+        /* ================= NO RESULTS ================= */
+
+        if (list.length === 0) {
+
+            alphabetGrid.innerHTML = `
+
+                <div class="no-result">
+
+                    😕 No alphabet found.
+
+                    <br><br>
+
+                    Try searching for A, B, Apple, Cat, etc.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        /* ================= CREATE CARDS ================= */
+
+        list.forEach(function(alphabet) {
+
+
+            const card =
+                document.createElement("div");
+
+
+            card.className =
+                "alphabet-card";
+
+
+            card.innerHTML = `
+
+                <!-- BIG LETTER -->
+
+                <div
+                    class="big-letter"
+                    style="color: ${alphabet.color};">
+
+                    ${alphabet.letter}
+
+                </div>
+
+
+                <!-- WORD -->
+
+                <p
+                    style="color: ${alphabet.color};">
+
+                    ${alphabet.letter} for ${alphabet.word}
+
+                </p>
+
+
+                <!-- LISTEN BUTTON -->
+
+                <button
+                    class="voice-btn"
+                    style="background: ${alphabet.color};"
+                    onclick="speak('${alphabet.letter} for ${alphabet.word}')">
+
+                    <i class="fa-solid fa-volume-high"></i>
+
+                    Listen
+
+                </button>
+
+            `;
+
+
+            alphabetGrid.appendChild(card);
+
+        });
+
+    }
+
+
+    /* ==================================================
+       VOICE
+    ================================================== */
+
+    function speak(text) {
+
+
+        /* Stop previous voice */
+
+        speechSynthesis.cancel();
+
+
+        /* Create speech */
+
+        const speech =
+            new SpeechSynthesisUtterance(text);
+
+
+        /* English voice */
+
+        speech.lang = "en-US";
+
+
+        /* Speech speed */
+
+        speech.rate = 0.85;
+
+
+        /* Voice pitch */
+
+        speech.pitch = 1;
+
+
+        /* Volume */
+
+        speech.volume = 1;
+
+
+        /* Speak */
+
+        speechSynthesis.speak(speech);
+
+    }
+
+
+    /* ==================================================
+       SEARCH ALPHABETS
+    ================================================== */
+
+    function searchAlphabets() {
+
+
+        const searchValue =
+            document
+                .getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+        const filteredAlphabets =
+            alphabets.filter(function(alphabet) {
+
+
+                return (
+
+                    alphabet.letter
+                        .toLowerCase()
+                        .includes(searchValue)
+
+                    ||
+
+                    alphabet.word
+                        .toLowerCase()
+                        .includes(searchValue)
+
+                );
+
+            });
+
+
+        showAlphabets(filteredAlphabets);
+
+    }
+
+
+    /* ==================================================
+       INITIAL LOAD
+    ================================================== */
+
+    showAlphabets(alphabets);
+
+
+</script>
+
+
+</body>
+
+</html>

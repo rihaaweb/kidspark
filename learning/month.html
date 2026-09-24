@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Months of the Year for Kids - Learn Months | Kids Park</title>
+
+<meta name="description"
+    content="Learn the 12 months of the year with Kids Park. Explore January to December in a simple and fun way to help children learn and remember the months.">
+
+<meta name="keywords"
+    content="months for kids, months of the year for kids, learn months, January to December, month names for kids, months learning, Kids Park">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="Kids Park">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8e7;
+            color: #263746;
+        }
+
+        .header {
+            background: #263746;
+            color: white;
+            text-align: center;
+            padding: 30px 15px;
+        }
+
+        .header h1 {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 92%;
+            margin: 35px auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            text-decoration: none;
+            background: #ff7043;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: #e64a19;
+        }
+
+        .search-box {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+            max-width: 550px;
+            padding: 15px 18px;
+            border: 2px solid #ff7043;
+            border-radius: 30px;
+            outline: none;
+            font-size: 16px;
+            background: white;
+        }
+
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .month-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+            transition: 0.3s;
+        }
+
+        .month-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .month-emoji {
+            font-size: 65px;
+            margin-bottom: 15px;
+        }
+
+        .month-number {
+            font-size: 14px;
+            color: #777;
+            margin-bottom: 8px;
+        }
+
+        .month-card h2 {
+            font-size: 21px;
+            margin-bottom: 15px;
+        }
+
+        .listen-button {
+            border: none;
+            background: #ff7043;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .listen-button:hover {
+            background: #e64a19;
+        }
+
+        .listen-button i {
+            margin-right: 5px;
+        }
+
+        .no-result {
+            display: none;
+            text-align: center;
+            font-size: 20px;
+            padding: 40px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #263746;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 800px) {
+            .months-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .months-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+
+            .month-card {
+                padding: 22px 10px;
+            }
+
+            .month-emoji {
+                font-size: 52px;
+            }
+
+            .month-card h2 {
+                font-size: 17px;
+            }
+
+            .listen-button {
+                font-size: 12px;
+                padding: 8px 12px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>📅 Learn Months</h1>
+        <p>Learn the 12 months of the year! 🌈</p>
+    </header>
+
+    <div class="container">
+
+        <a href="../learning.html" class="back-button">
+            ← Back to Home
+        </a>
+
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔍 Search month..."
+                onkeyup="searchMonths()">
+        </div>
+
+        <div class="months-grid" id="monthsGrid"></div>
+
+        <div class="no-result" id="noResult">
+            😔 No month found!
+        </div>
+
+    </div>
+
+    <footer>
+        🐣 Kids Learning • Learn and Have Fun!
+    </footer>
+
+
+    <script>
+
+        const months = [
+
+            {
+                name: "January",
+                emoji: "🎆",
+                number: "Month 1"
+            },
+
+            {
+                name: "February",
+                emoji: "❤️",
+                number: "Month 2"
+            },
+
+            {
+                name: "March",
+                emoji: "🌸",
+                number: "Month 3"
+            },
+
+            {
+                name: "April",
+                emoji: "🌧️",
+                number: "Month 4"
+            },
+
+            {
+                name: "May",
+                emoji: "🌷",
+                number: "Month 5"
+            },
+
+            {
+                name: "June",
+                emoji: "☀️",
+                number: "Month 6"
+            },
+
+            {
+                name: "July",
+                emoji: "🏖️",
+                number: "Month 7"
+            },
+
+            {
+                name: "August",
+                emoji: "🌻",
+                number: "Month 8"
+            },
+
+            {
+                name: "September",
+                emoji: "🍂",
+                number: "Month 9"
+            },
+
+            {
+                name: "October",
+                emoji: "🎃",
+                number: "Month 10"
+            },
+
+            {
+                name: "November",
+                emoji: "🍁",
+                number: "Month 11"
+            },
+
+            {
+                name: "December",
+                emoji: "🎄",
+                number: "Month 12"
+            }
+
+        ];
+
+
+        function showMonths(list = months) {
+
+            const grid = document.getElementById("monthsGrid");
+            const noResult = document.getElementById("noResult");
+
+            grid.innerHTML = "";
+
+            if (list.length === 0) {
+                noResult.style.display = "block";
+                return;
+            }
+
+            noResult.style.display = "none";
+
+            list.forEach(month => {
+
+                const card = document.createElement("div");
+
+                card.className = "month-card";
+
+                card.innerHTML = `
+
+                    <div class="month-emoji">
+                        ${month.emoji}
+                    </div>
+
+                    <div class="month-number">
+                        ${month.number}
+                    </div>
+
+                    <h2>${month.name}</h2>
+
+                    <button
+                        class="listen-button"
+                        onclick="speak('${month.name}')">
+
+                        <i class="fa-solid fa-volume-high"></i>
+                        Listen
+
+                    </button>
+
+                `;
+
+                grid.appendChild(card);
+
+            });
+
+        }
+
+
+        function searchMonths() {
+
+            const searchText =
+                document.getElementById("searchInput")
+                .value
+                .toLowerCase()
+                .trim();
+
+            const filteredMonths = months.filter(month =>
+                month.name.toLowerCase().includes(searchText)
+            );
+
+            showMonths(filteredMonths);
+
+        }
+
+
+        function speak(text) {
+
+            speechSynthesis.cancel();
+
+            const speech =
+                new SpeechSynthesisUtterance(text);
+
+            speech.lang = "en-US";
+            speech.rate = 0.85;
+            speech.pitch = 1;
+            speech.volume = 1;
+
+            speechSynthesis.speak(speech);
+
+        }
+
+
+        showMonths();
+
+    </script>
+
+</body>
+
+</html>

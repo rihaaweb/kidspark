@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Numbers for Kids - Learn Numbers 1 to 100 | Kids Park</title>
+
+<meta name="description"
+    content="Learn numbers from 1 to 100 with Kids Park. Explore numbers through fun, simple and educational activities designed to help children recognize, read and learn numbers.">
+
+<meta name="keywords"
+    content="numbers for kids, learn numbers, numbers 1 to 100, counting for kids, number names for kids, numbers with pictures, counting numbers, number learning, math for kids, Kids Park">
+
+<meta name="robots" content="index, follow">
+
+<meta name="author" content="Kids Park">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        i {
+            color: white;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fff8e7;
+            color: #333;
+        }
+
+        /* ================= CONTAINER ================= */
+
+        .container {
+            width: 92%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        /* ================= PAGE TITLE ================= */
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .page-title h2 {
+            font-size: 32px;
+            color: #263746;
+        }
+
+        .page-title p {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 13px 18px;
+
+            border: 2px solid #ddd;
+            border-radius: 30px;
+
+            font-size: 16px;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #ff7043;
+        }
+
+        /* ================= NUMBER GRID ================= */
+
+        .numbers-grid {
+            display: grid;
+
+            grid-template-columns: repeat(5, 1fr);
+
+            gap: 20px;
+        }
+
+        /* ================= NUMBER CARD ================= */
+
+        .number-card {
+            background: white;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
+
+            transition: 0.3s;
+        }
+
+        .number-card:hover {
+            transform: translateY(-6px);
+        }
+
+        /* ================= EMOJI ================= */
+
+        .number-emoji {
+            font-size: 65px;
+
+            min-height: 80px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        /* ================= NUMBER ================= */
+
+        .number-card h3 {
+            margin: 10px 0 5px;
+
+            font-size: 30px;
+
+            color: #ff7043;
+        }
+
+        /* ================= NUMBER WORD ================= */
+
+        .number-card p {
+            font-size: 16px;
+
+            font-weight: bold;
+
+            color: #555;
+
+            margin-bottom: 12px;
+
+            text-transform: capitalize;
+        }
+
+        /* ================= VOICE BUTTON ================= */
+
+        .voice-btn {
+            border: none;
+
+            background: #ff7043;
+
+            color: white;
+
+            padding: 9px 16px;
+
+            border-radius: 25px;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            transition: 0.2s;
+        }
+
+        .voice-btn:hover {
+            background: #e64a19;
+        }
+
+        /* ================= NO RESULT ================= */
+
+        .no-result {
+            grid-column: 1 / -1;
+
+            text-align: center;
+
+            padding: 40px 20px;
+
+            font-size: 18px;
+
+            color: #777;
+        }
+
+        /* ================= BACK BUTTON ================= */
+
+        .back-button {
+            display: block;
+
+            width: fit-content;
+
+            margin: 40px auto 0;
+
+            background: #ff7043;
+
+            color: white;
+
+            text-decoration: none;
+
+            padding: 11px 25px;
+
+            border-radius: 25px;
+
+            font-weight: bold;
+        }
+
+        .back-button:hover {
+            background: #e64a19;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            margin-top: 50px;
+
+            background: #263746;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+        /* ================= TABLET ================= */
+
+        @media (max-width: 1000px) {
+
+            .numbers-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+        }
+
+        @media (max-width: 800px) {
+
+            .numbers-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 94%;
+            }
+
+            .page-title h2 {
+                font-size: 26px;
+            }
+
+            .page-title p {
+                font-size: 14px;
+            }
+
+            .numbers-grid {
+                grid-template-columns: repeat(2, 1fr);
+
+                gap: 12px;
+            }
+
+            .number-card {
+                padding: 12px;
+
+                border-radius: 16px;
+            }
+
+            .number-emoji {
+                font-size: 50px;
+
+                min-height: 65px;
+            }
+
+            .number-card h3 {
+                font-size: 25px;
+            }
+
+            .number-card p {
+                font-size: 14px;
+            }
+
+            .voice-btn {
+                font-size: 12px;
+
+                padding: 7px 11px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= MAIN ================= -->
+
+<main class="container">
+
+
+    <!-- ================= PAGE TITLE ================= -->
+
+    <div class="page-title">
+
+        <h2>🔢 Learn Numbers 1-100</h2>
+
+        <p>
+            Learn numbers from 1 to 100 with fun emojis and English pronunciation.
+        </p>
+
+    </div>
+
+
+    <!-- ================= SEARCH ================= -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 Search number..."
+            oninput="searchNumbers()"
+        >
+
+    </div>
+
+
+    <!-- ================= NUMBER GRID ================= -->
+
+    <div
+        class="numbers-grid"
+        id="numbersGrid"
+    ></div>
+
+
+    <!-- ================= BACK ================= -->
+
+    <a
+        href="../learning.html"
+        class="back-button"
+    >
+        ← Back to Home
+    </a>
+
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        🐣 Kids Learning • Learn and Have Fun!
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+/* ==================================================
+   NUMBER WORDS
+================================================== */
+
+const numberWords = [
+
+    "One",
+    "Two",
+    "Three",
+    "Four",
+    "Five",
+    "Six",
+    "Seven",
+    "Eight",
+    "Nine",
+    "Ten",
+
+    "Eleven",
+    "Twelve",
+    "Thirteen",
+    "Fourteen",
+    "Fifteen",
+    "Sixteen",
+    "Seventeen",
+    "Eighteen",
+    "Nineteen",
+    "Twenty",
+
+    "Twenty One",
+    "Twenty Two",
+    "Twenty Three",
+    "Twenty Four",
+    "Twenty Five",
+    "Twenty Six",
+    "Twenty Seven",
+    "Twenty Eight",
+    "Twenty Nine",
+    "Thirty",
+
+    "Thirty One",
+    "Thirty Two",
+    "Thirty Three",
+    "Thirty Four",
+    "Thirty Five",
+    "Thirty Six",
+    "Thirty Seven",
+    "Thirty Eight",
+    "Thirty Nine",
+    "Forty",
+
+    "Forty One",
+    "Forty Two",
+    "Forty Three",
+    "Forty Four",
+    "Forty Five",
+    "Forty Six",
+    "Forty Seven",
+    "Forty Eight",
+    "Forty Nine",
+    "Fifty",
+
+    "Fifty One",
+    "Fifty Two",
+    "Fifty Three",
+    "Fifty Four",
+    "Fifty Five",
+    "Fifty Six",
+    "Fifty Seven",
+    "Fifty Eight",
+    "Fifty Nine",
+    "Sixty",
+
+    "Sixty One",
+    "Sixty Two",
+    "Sixty Three",
+    "Sixty Four",
+    "Sixty Five",
+    "Sixty Six",
+    "Sixty Seven",
+    "Sixty Eight",
+    "Sixty Nine",
+    "Seventy",
+
+    "Seventy One",
+    "Seventy Two",
+    "Seventy Three",
+    "Seventy Four",
+    "Seventy Five",
+    "Seventy Six",
+    "Seventy Seven",
+    "Seventy Eight",
+    "Seventy Nine",
+    "Eighty",
+
+    "Eighty One",
+    "Eighty Two",
+    "Eighty Three",
+    "Eighty Four",
+    "Eighty Five",
+    "Eighty Six",
+    "Eighty Seven",
+    "Eighty Eight",
+    "Eighty Nine",
+    "Ninety",
+
+    "Ninety One",
+    "Ninety Two",
+    "Ninety Three",
+    "Ninety Four",
+    "Ninety Five",
+    "Ninety Six",
+    "Ninety Seven",
+    "Ninety Eight",
+    "Ninety Nine",
+    "One Hundred"
+
+];
+
+
+/* ==================================================
+   EMOJIS
+================================================== */
+
+const numberEmojis = [
+
+    "1️⃣",
+    "2️⃣",
+    "3️⃣",
+    "4️⃣",
+    "5️⃣",
+    "6️⃣",
+    "7️⃣",
+    "8️⃣",
+    "9️⃣",
+    "🔟",
+
+    "🌟",
+    "🍎",
+    "🐶",
+    "🐱",
+    "⭐",
+    "🎈",
+    "🦋",
+    "🌈",
+    "🍭",
+    "🎁",
+
+    "🐼",
+    "🐸",
+    "🦁",
+    "🐯",
+    "🐘",
+    "🦄",
+    "🐰",
+    "🐨",
+    "🐵",
+    "🎂",
+
+    "🍕",
+    "🍔",
+    "🍎",
+    "🍌",
+    "🍓",
+    "🍉",
+    "🍇",
+    "🥭",
+    "🍍",
+    "🍊",
+
+    "🌞",
+    "🌙",
+    "⭐",
+    "☀️",
+    "🌈",
+    "☁️",
+    "🌧️",
+    "❄️",
+    "🌊",
+    "🔥",
+
+    "🚗",
+    "🚌",
+    "🚲",
+    "✈️",
+    "🚀",
+    "🚂",
+    "🚢",
+    "🚁",
+    "🏎️",
+    "🚕",
+
+    "⚽",
+    "🏀",
+    "🏈",
+    "⚾",
+    "🎾",
+    "🏐",
+    "🎯",
+    "🎮",
+    "🧩",
+    "🎨",
+
+    "📚",
+    "✏️",
+    "🖍️",
+    "📖",
+    "🎒",
+    "🏫",
+    "🧸",
+    "🎵",
+    "🎸",
+    "🎹",
+
+    "🌳",
+    "🌴",
+    "🌻",
+    "🌹",
+    "🌷",
+    "🌺",
+    "🍀",
+    "🌱",
+    "🌿",
+    "🌵",
+
+    "👑",
+    "🎉",
+    "🎊",
+    "🏆",
+    "🥇",
+    "💎",
+    "❤️",
+    "💖",
+    "✨",
+    "🌟"
+
+];
+
+
+/* ==================================================
+   GET NUMBER GRID
+================================================== */
+
+const numbersGrid =
+    document.getElementById("numbersGrid");
+
+
+/* ==================================================
+   CREATE NUMBERS 1-100
+================================================== */
+
+const numbers = [];
+
+
+for (let i = 1; i <= 100; i++) {
+
+    numbers.push({
+
+        number: i,
+
+        word: numberWords[i - 1],
+
+        emoji: numberEmojis[i - 1]
+
+    });
+
+}
+
+
+/* ==================================================
+   SHOW NUMBERS
+================================================== */
+
+function showNumbers(list) {
+
+    numbersGrid.innerHTML = "";
+
+
+    /* No results */
+
+    if (list.length === 0) {
+
+        numbersGrid.innerHTML = `
+
+            <div class="no-result">
+
+                😕 No number found.
+
+            </div>
+
+        `;
+
+        return;
+    }
+
+
+    /* Create cards */
+
+    list.forEach(function(item) {
+
+
+        const card =
+            document.createElement("div");
+
+
+        card.className =
+            "number-card";
+
+
+        card.innerHTML = `
+
+            <div class="number-emoji">
+
+                ${item.emoji}
+
+            </div>
+
+            <h3>
+                ${item.number}
+            </h3>
+
+            <p>
+                ${item.word}
+            </p>
+
+            <button
+                class="voice-btn"
+                onclick="speak('${item.number} ${item.word}')"
+            >
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                Listen
+
+            </button>
+
+        `;
+
+
+        numbersGrid.appendChild(card);
+
+    });
+
+}
+
+
+/* ==================================================
+   VOICE
+================================================== */
+
+function speak(text) {
+
+
+    /* Stop previous voice */
+
+    speechSynthesis.cancel();
+
+
+    const speech =
+        new SpeechSynthesisUtterance(text);
+
+
+    /* English voice */
+
+    speech.lang = "en-US";
+
+
+    /* Speed */
+
+    speech.rate = 0.85;
+
+
+    /* Pitch */
+
+    speech.pitch = 1;
+
+
+    /* Volume */
+
+    speech.volume = 1;
+
+
+    /* Speak */
+
+    speechSynthesis.speak(speech);
+
+}
+
+
+/* ==================================================
+   SEARCH NUMBERS
+================================================== */
+
+function searchNumbers() {
+
+
+    const searchValue =
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+
+    const filteredNumbers =
+        numbers.filter(function(item) {
+
+
+            return (
+
+                item.number
+                    .toString()
+                    .includes(searchValue)
+
+                ||
+
+                item.word
+                    .toLowerCase()
+                    .includes(searchValue)
+
+            );
+
+
+        });
+
+
+    showNumbers(filteredNumbers);
+
+}
+
+
+/* ==================================================
+   INITIAL LOAD
+================================================== */
+
+showNumbers(numbers);
+
+
+</script>
+
+
+</body>
+
+</html>

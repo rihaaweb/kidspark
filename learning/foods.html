@@ -4,25 +4,25 @@
 <head>
 
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     <title>Animals for Kids - Learn About Animals | Kids Park</title>
+   <title>Food for Kids - Learn Food Names | Kids Park</title>
 
-    <meta name="description"
-        content="Learn about different animals with Kids Park. Explore fun animal names, pictures and sounds to help children learn about wild and domestic animals.">
+<meta name="description"
+    content="Learn about different foods with Kids Park. Explore food names, pictures and fun learning activities designed to help children discover different types of food.">
 
-    <meta name="keywords"
-        content="animals for kids, learn animals, animal names for kids, animals with pictures, wild animals for kids, domestic animals for kids, animal learning, kids animals, Kids Park">
+<meta name="keywords"
+    content="food for kids, learn food, food names for kids, foods with pictures, types of food for kids, food learning, kids food, healthy food for kids, Kids Park">
 
-    <meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow">
 
-    <meta name="author" content="Kids Park">
- <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
->
-<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+<meta name="author" content="Kids Park">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
 
     <style>
 
@@ -31,19 +31,16 @@
             padding: 0;
             box-sizing: border-box;
         }
-        i{
+
+        i {
             color: white;
         }
-
 
         body {
             font-family: Arial, sans-serif;
             background: #fff8e7;
             color: #333;
         }
-
-
-        
 
         /* ================= CONTAINER ================= */
 
@@ -53,7 +50,6 @@
             margin: 35px auto;
         }
 
-
         /* ================= PAGE TITLE ================= */
 
         .page-title {
@@ -61,18 +57,15 @@
             margin-bottom: 30px;
         }
 
-
         .page-title h2 {
             font-size: 32px;
             color: #263746;
         }
 
-
         .page-title p {
             margin-top: 8px;
             font-size: 16px;
         }
-
 
         /* ================= SEARCH ================= */
 
@@ -80,7 +73,6 @@
             max-width: 500px;
             margin: 0 auto 35px;
         }
-
 
         .search-box input {
             width: 100%;
@@ -93,15 +85,13 @@
             outline: none;
         }
 
-
         .search-box input:focus {
             border-color: #ff7043;
         }
 
+        /* ================= FOOD GRID ================= */
 
-        /* ================= ANIMAL GRID ================= */
-
-        .animals-grid {
+        .food-grid {
             display: grid;
 
             grid-template-columns: repeat(5, 1fr);
@@ -109,49 +99,49 @@
             gap: 20px;
         }
 
+        /* ================= FOOD CARD ================= */
 
-        /* ================= ANIMAL CARD ================= */
-
-        .animal-card {
+        .food-card {
             background: white;
 
-            padding: 18px;
+            padding: 20px;
 
             border-radius: 20px;
 
             text-align: center;
 
-            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.10);
 
             transition: 0.3s;
         }
 
-
-        .animal-card:hover {
+        .food-card:hover {
             transform: translateY(-6px);
         }
 
+        /* ================= EMOJI ================= */
 
-        .animal-card img {
-            width: 140px;
-            height: 140px;
+        .food-emoji {
+            font-size: 65px;
 
-            object-fit: contain;
+            min-height: 85px;
 
-            display: block;
+            display: flex;
 
-            margin: auto;
+            align-items: center;
+
+            justify-content: center;
         }
 
+        /* ================= FOOD NAME ================= */
 
-        .animal-card h3 {
+        .food-card h3 {
             margin: 12px 0;
 
             font-size: 20px;
 
             color: #333;
         }
-
 
         /* ================= VOICE BUTTON ================= */
 
@@ -173,11 +163,9 @@
             transition: 0.2s;
         }
 
-
         .voice-btn:hover {
             background: #e64a19;
         }
-
 
         /* ================= NO RESULT ================= */
 
@@ -192,7 +180,6 @@
 
             color: #777;
         }
-
 
         /* ================= BACK BUTTON ================= */
 
@@ -216,11 +203,9 @@
             font-weight: bold;
         }
 
-
         .back-button:hover {
             background: #e64a19;
         }
-
 
         /* ================= FOOTER ================= */
 
@@ -236,81 +221,61 @@
             padding: 25px;
         }
 
-
         /* ================= TABLET ================= */
 
         @media (max-width: 1000px) {
 
-            .animals-grid {
+            .food-grid {
                 grid-template-columns: repeat(4, 1fr);
             }
 
         }
 
-
         @media (max-width: 800px) {
 
-            .animals-grid {
+            .food-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
 
         }
 
-
         /* ================= MOBILE ================= */
 
         @media (max-width: 600px) {
-
-            header h1 {
-                font-size: 28px;
-            }
-
-
-            header p {
-                font-size: 15px;
-            }
-
-
-            nav a {
-                margin: 0 6px;
-                font-size: 14px;
-            }
-
 
             .container {
                 width: 94%;
             }
 
-
             .page-title h2 {
                 font-size: 26px;
             }
 
+            .page-title p {
+                font-size: 14px;
+            }
 
-            .animals-grid {
+            .food-grid {
                 grid-template-columns: repeat(2, 1fr);
 
                 gap: 12px;
             }
 
-
-            .animal-card {
-                padding: 10px;
+            .food-card {
+                padding: 12px;
 
                 border-radius: 16px;
             }
 
+            .food-emoji {
+                font-size: 50px;
 
-            .animal-card img {
-                width: 105px;
-                height: 105px;
+                min-height: 65px;
             }
 
-
-            .animal-card h3 {
+            .food-card h3 {
                 font-size: 16px;
             }
-
 
             .voice-btn {
                 font-size: 12px;
@@ -320,17 +285,12 @@
 
         }
 
-
     </style>
 
 </head>
 
 
 <body>
-
-
-
-
 
 
 <!-- ================= MAIN ================= -->
@@ -342,14 +302,13 @@
 
     <div class="page-title">
 
-        <h2>🐶 Learn Animals</h2>
+        <h2>🍎 Learn Foods</h2>
 
-<p>
-    Click the Listen button to hear the animal name.
-</p>
+        <p>
+            Learn different foods with fun emojis and English pronunciation.
+        </p>
 
     </div>
-
 
 
     <!-- ================= SEARCH ================= -->
@@ -359,21 +318,19 @@
         <input
             type="text"
             id="searchInput"
-            placeholder="🔍 Search animal..."
-            oninput="searchAnimals()"
+            placeholder="🔍 Search food..."
+            oninput="searchFoods()"
         >
 
     </div>
 
 
-
-    <!-- ================= ANIMAL GRID ================= -->
+    <!-- ================= FOOD GRID ================= -->
 
     <div
-        class="animals-grid"
-        id="animalGrid"
+        class="food-grid"
+        id="foodGrid"
     ></div>
-
 
 
     <!-- ================= BACK ================= -->
@@ -389,17 +346,15 @@
 </main>
 
 
-
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
     <p>
-        🐣Kids Learning • Learn and Have Fun!
+        🐣 Kids Learning • Learn and Have Fun!
     </p>
 
 </footer>
-
 
 
 <!-- ================= JAVASCRIPT ================= -->
@@ -408,191 +363,252 @@
 
 
 /* ==================================================
-   ANIMAL DATA
+   FOOD DATA
 ================================================== */
 
-
-const animals = [
+const foods = [
 
     {
-        name: "Zebra",
-        image: "../learning/animals/1.png"
+        name: "Apple",
+        emoji: "🍎"
     },
 
     {
-        name: "Giraffe",
-        image: "../learning/animals/2.png"
+        name: "Banana",
+        emoji: "🍌"
     },
 
     {
-        name: "Deer",
-        image: "../learning/animals/3.png"
+        name: "Orange",
+        emoji: "🍊"
     },
 
     {
-        name: "Pig",
-        image: "../learning/animals/4.png"
+        name: "Mango",
+        emoji: "🥭"
     },
 
     {
-        name: "Sheep",
-        image: "../learning/animals/5.png"
+        name: "Watermelon",
+        emoji: "🍉"
     },
 
     {
-        name: "Horse",
-        image: "../learning/animals/6.png"
+        name: "Grapes",
+        emoji: "🍇"
     },
 
     {
-        name: "Rabbit",
-        image: "../learning/animals/7.png"
+        name: "Strawberry",
+        emoji: "🍓"
     },
 
     {
-        name: "Monkey",
-        image: "../learning/animals/8.png"
+        name: "Pineapple",
+        emoji: "🍍"
     },
 
     {
-        name: "Elephant",
-        image: "../learning/animals/9.png"
+        name: "Papaya",
+        emoji: "🥭"
     },
 
     {
-        name: "Tiger",
-        image: "../learning/animals/10.png"
+        name: "Coconut",
+        emoji: "🥥"
     },
 
     {
-        name: "Lion",
-        image: "../learning/animals/11.png"
+        name: "Carrot",
+        emoji: "🥕"
     },
 
     {
-        name: "Goat",
-       image: "../learning/animals/12.png"
+        name: "Tomato",
+        emoji: "🍅"
     },
 
     {
-        name: "Cow",
-        image: "../learning/animals/13.png"
+        name: "Potato",
+        emoji: "🥔"
     },
 
     {
-        name: "Dog",
-        image: "../learning/animals/14.png"
+        name: "Corn",
+        emoji: "🌽"
     },
 
     {
-        name: "Cat",
-        image: "../learning/animals/15.png"
+        name: "Broccoli",
+        emoji: "🥦"
     },
 
     {
-        name: "Rat",
-        image: "../learning/animals/16.png"
+        name: "Bread",
+        emoji: "🍞"
     },
 
     {
-        name: "Fox",
-        image: "../learning/animals/17.png"
+        name: "Rice",
+        emoji: "🍚"
     },
 
     {
-        name: "Bear",
-        image: "../learning/animals/18.png"
+        name: "Egg",
+        emoji: "🥚"
     },
 
     {
-        name: "Donkey",
-        image: "../learning/animals/19.png"
+        name: "Milk",
+        emoji: "🥛"
     },
 
     {
-        name: "Camel",
-       image: "../learning/animals/20.png"
+        name: "Cheese",
+        emoji: "🧀"
     },
-    {
-        name: "Cheetah",
-       image: "../learning/animals/21.png"
-    },
-
 
     {
-        name: "Squirrel",
-       image: "../learning/animals/22.png"
+        name: "Pizza",
+        emoji: "🍕"
     },
-
 
     {
-        name: "Panda",
-       image: "../learning/animals/23.png"
+        name: "Burger",
+        emoji: "🍔"
     },
-
 
     {
-        name: "Wolf",
-       image: "../learning/animals/24.png"
+        name: "French Fries",
+        emoji: "🍟"
     },
-
 
     {
-        name: "Buffalo",
-       image: "../learning/animals/25.png"
+        name: "Sandwich",
+        emoji: "🥪"
     },
-
 
     {
-        name: "Panther",
-       image: "../learning/animals/26.png"
+        name: "Hot Dog",
+        emoji: "🌭"
     },
 
+    {
+        name: "Taco",
+        emoji: "🌮"
+    },
+
+    {
+        name: "Popcorn",
+        emoji: "🍿"
+    },
+
+    {
+        name: "Noodles",
+        emoji: "🍜"
+    },
+
+    {
+        name: "Soup",
+        emoji: "🍲"
+    },
+
+    {
+        name: "Cake",
+        emoji: "🎂"
+    },
+
+    {
+        name: "Ice Cream",
+        emoji: "🍦"
+    },
+
+    {
+        name: "Cookie",
+        emoji: "🍪"
+    },
+
+    {
+        name: "Chocolate",
+        emoji: "🍫"
+    },
+
+    {
+        name: "Candy",
+        emoji: "🍬"
+    },
+
+    {
+        name: "Donut",
+        emoji: "🍩"
+    },
+
+    {
+        name: "Cupcake",
+        emoji: "🧁"
+    },
+
+    {
+        name: "Honey",
+        emoji: "🍯"
+    },
+
+    {
+        name: "Juice",
+        emoji: "🧃"
+    },
+
+    {
+        name: "Tea",
+        emoji: "🍵"
+    },
+
+    {
+        name: "Water",
+        emoji: "💧"
+    }
 
 ];
 
 
-
 /* ==================================================
-   GET ANIMAL GRID
+   GET FOOD GRID
 ================================================== */
 
-
-const animalGrid =
-    document.getElementById("animalGrid");
-
+const foodGrid =
+    document.getElementById("foodGrid");
 
 
 /* ==================================================
-   SHOW ANIMALS
+   SHOW FOODS
 ================================================== */
 
+function showFoods(list) {
 
-function showAnimals(list) {
-
-    animalGrid.innerHTML = "";
+    foodGrid.innerHTML = "";
 
 
     /* No results */
 
     if (list.length === 0) {
 
-        animalGrid.innerHTML = `
-        
+        foodGrid.innerHTML = `
+
             <div class="no-result">
-                😕 No animal found.
+
+                😕 No food found.
+
             </div>
-            
+
         `;
 
         return;
     }
 
 
-
     /* Create cards */
 
-    list.forEach(function(animal) {
+    list.forEach(function(food) {
 
 
         const card =
@@ -600,91 +616,71 @@ function showAnimals(list) {
 
 
         card.className =
-            "animal-card";
+            "food-card";
 
 
         card.innerHTML = `
 
-            <img
-                src="${animal.image}"
-                alt="${animal.name}"
-                loading="lazy"
-            >
+            <div class="food-emoji">
+
+                ${food.emoji}
+
+            </div>
 
             <h3>
-                ${animal.name}
+                ${food.name}
             </h3>
 
             <button
                 class="voice-btn"
-                onclick="speak('${animal.name}')"
+                onclick="speak('${food.name}')"
             >
-                <i class="fa-solid fa-volume-high"></i> Listen
+
+                <i class="fa-solid fa-volume-high"></i>
+
+                Listen
+
             </button>
 
         `;
 
 
-        animalGrid.appendChild(card);
+        foodGrid.appendChild(card);
 
     });
 
 }
 
 
-
 /* ==================================================
    VOICE
 ================================================== */
 
-
 function speak(text) {
 
-
-    /* Stop previous voice */
-
     speechSynthesis.cancel();
-
 
     const speech =
         new SpeechSynthesisUtterance(text);
 
-
-    /* English voice */
-
     speech.lang = "en-US";
-
-
-    /* Speed */
 
     speech.rate = 0.85;
 
-
-    /* Pitch */
-
     speech.pitch = 1;
 
-
-    /* Volume */
-
     speech.volume = 1;
-
-
-    /* Speak */
 
     speechSynthesis.speak(speech);
 
 }
 
 
-
 /* ==================================================
-   SEARCH ANIMALS
+   SEARCH FOODS
 ================================================== */
 
-
-function searchAnimals() {
-
+function searchFoods() {
 
     const searchValue =
         document
@@ -694,30 +690,26 @@ function searchAnimals() {
             .trim();
 
 
-    const filteredAnimals =
-        animals.filter(function(animal) {
+    const filteredFoods =
+        foods.filter(function(food) {
 
-
-            return animal.name
+            return food.name
                 .toLowerCase()
                 .includes(searchValue);
-
 
         });
 
 
-    showAnimals(filteredAnimals);
+    showFoods(filteredFoods);
 
 }
-
 
 
 /* ==================================================
    INITIAL LOAD
 ================================================== */
 
-
-showAnimals(animals);
+showFoods(foods);
 
 
 </script>
