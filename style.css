@@ -684,6 +684,126 @@ button {
 }
 
 
+/* ================= AUTHOR CARD ================= */
+
+.author-section {
+    background: #FFFAF3;
+    padding: 50px 20px;
+}
+
+.author-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 35px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 2px solid #ffe1d8;
+    border-radius: 24px;
+    box-shadow: 0 8px 25px rgba(86, 2, 31, 0.08);
+}
+
+.author-avatar {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 115px;
+    height: 115px;
+    border-radius: 50%;
+    background: #fff0e9;
+    border: 3px solid #FF7055;
+    font-size: 58px;
+}
+
+.author-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.author-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: #FF7055;
+    font-weight: 700;
+}
+
+.author-info h2 {
+    margin: 0 0 12px;
+    color: #56021F;
+    font-size: 27px;
+    line-height: 1.4;
+}
+
+.author-info h2 span {
+    color: #FF7055;
+}
+
+.author-info p {
+    margin: 0 0 20px;
+    color: #62545a;
+    line-height: 1.8;
+}
+
+.author-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    background: #56021F;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.author-button:hover {
+    background: #FF7055;
+    transform: translateY(-2px);
+}
+
+.author-decoration {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    font-size: 30px;
+    opacity: 0.5;
+}
+
+@media (max-width: 600px) {
+    .author-section {
+        padding: 30px 16px;
+    }
+
+    .author-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        padding: 25px 20px;
+    }
+
+    .author-avatar {
+        width: 90px;
+        height: 90px;
+        font-size: 46px;
+    }
+
+    .author-info h2 {
+        font-size: 23px;
+    }
+
+    .author-decoration {
+        right: 15px;
+        top: 12px;
+    }
+}
+
+
+
 /* =========================================
    CTA
 ========================================= */
