@@ -1,0 +1,1342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#fff0d8">
+  <title>Kids Park - Kids Coloring games</title>
+  <!-- ================= FAVICON ================= -->
+
+<link
+    rel="shortcut icon"
+    href="../favicon.ico"
+    type="image/x-icon">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+   <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --ink: #46354d;
+  --muted: #776c7f;
+  --pink: #ff719a;
+  --purple: #8254c8;
+  --cream: #fffaf1;
+  --card: #ffffff;
+  --line: #f0e4f2;
+  --shadow: 0 8px 0 #eadcf0, 0 14px 28px rgba(82, 48, 103, .09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 9%, #ffe0ed 0, transparent 21rem),
+    radial-gradient(circle at 92% 20%, #dff5ff 0, transparent 24rem),
+    var(--cream);
+}
+
+button, select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px max(5%, calc((100% - 1240px) / 2));
+  background: rgba(255, 255, 255, .9);
+  border-bottom: 2px solid #f5e7f0;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff, #ffe0e9);
+  box-shadow: 0 5px 0 #f4c1d4, 0 8px 14px #f7d8e3;
+  font-size: 2rem;
+}
+
+.brand b {
+  color: var(--pink);
+}
+
+.brand small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .67rem;
+  font-weight: 700;
+}
+
+.header-label {
+  padding: 10px 16px;
+  border: 2px solid #f5d6e4;
+  border-radius: 30px;
+  background: #fff1f6;
+  color: #9a4971;
+  font-size: .9rem;
+  font-weight: 900;
+}
+
+.container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 28px 0;
+  padding: clamp(22px, 4vw, 42px);
+  overflow: hidden;
+  border: 2px solid white;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #fff0f5, #f1eaff 55%, #e7f8ff);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  max-width: 690px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #fff;
+  color: #8d55a7;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .6px;
+}
+
+h1 {
+  margin: 10px 0 8px;
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.13;
+  letter-spacing: -1px;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0;
+  color: #66576d;
+  font-size: 1.08rem;
+  font-weight: 600;
+}
+
+.hero-art {
+  flex-shrink: 0;
+  font-size: clamp(2.6rem, 6vw, 5rem);
+  filter: drop-shadow(0 7px 0 rgba(112, 75, 135, .14));
+  transform: rotate(-6deg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  padding: 18px;
+  border: 2px solid white;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: 0 6px 0 #e8e0ee, 0 10px 20px #6b4c7a0c;
+}
+
+.score-card {
+  background: linear-gradient(130deg, #fff, #fff0f5);
+}
+
+.best-card {
+  background: linear-gradient(130deg, #fff, #fff8dd);
+}
+
+.stat-emoji {
+  display: grid;
+  place-items: center;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: #f4eaff;
+  font-size: 1.7rem;
+}
+
+.stat-card small {
+  display: block;
+  color: var(--muted);
+  font-size: .83rem;
+  font-weight: 800;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.7rem;
+  line-height: 1.25;
+  font-weight: 900;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(255px, .78fr) minmax(0, 1.6fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(18px, 2.4vw, 28px);
+  border: 2px solid #fff;
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 18px;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.controls-panel label {
+  display: block;
+  margin: 17px 0 7px;
+  font-size: .95rem;
+  font-weight: 900;
+}
+
+select {
+  width: 100%;
+  min-height: 54px;
+  padding: 11px 13px;
+  border: 2px solid #e9d9f1;
+  border-radius: 15px;
+  outline: none;
+  color: var(--ink);
+  background: #fdfaff;
+  font-size: .95rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+select:focus-visible, button:focus-visible {
+  outline: 3px solid #8854c9;
+  outline-offset: 3px;
+}
+
+.progress-area {
+  margin: 24px 0;
+}
+
+.progress-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+  font-size: .9rem;
+  font-weight: 900;
+}
+
+.progress-track {
+  height: 16px;
+  overflow: hidden;
+  border: 2px solid #e9ddf0;
+  border-radius: 30px;
+  background: #f5edf8;
+}
+
+.progress-bar {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #ff79a4, #bd83fa, #67cfff);
+  transition: width .25s ease;
+}
+
+.btn {
+  width: 100%;
+  min-height: 54px;
+  margin: 6px 0;
+  padding: 12px 16px;
+  border: 0;
+  border-radius: 17px;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s, filter .15s;
+}
+
+.btn:hover {
+  filter: brightness(1.03);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #ff79a3, #ed5790);
+  box-shadow: 0 5px 0 #ce4276;
+}
+
+.btn-secondary {
+  color: #69479a;
+  background: #f2eaff;
+  box-shadow: 0 5px 0 #ded0f4;
+}
+
+.tip {
+  margin: 22px 0 0;
+  padding: 15px;
+  border: 2px dashed #f0d5e5;
+  border-radius: 17px;
+  background: #fff8fb;
+  color: #765f78;
+  font-size: .91rem;
+  font-weight: 600;
+}
+
+.coloring-panel {
+  padding: clamp(16px, 2.5vw, 28px);
+}
+
+.canvas-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.canvas-heading h2 {
+  margin-bottom: 3px;
+}
+
+.canvas-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .92rem;
+  font-weight: 600;
+}
+
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 11px;
+  border-radius: 20px;
+  background: #e9fff1;
+  color: #287b4d;
+  font-size: .78rem;
+  font-weight: 900;
+}
+
+.live-badge span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #43c97b;
+}
+
+.picture-stage {
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+  margin: 20px 0;
+  padding: 15px;
+  border: 3px dashed #e7d7f0;
+  border-radius: 25px;
+  background:
+    radial-gradient(circle, #f1eaff 1.5px, transparent 2px),
+    linear-gradient(145deg, #fffdfd, #f7f0ff);
+  background-size: 20px 20px, auto;
+}
+
+.artwork {
+  width: min(100%, 460px);
+  margin: auto;
+}
+
+.artwork svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  filter: drop-shadow(0 7px 0 rgba(94, 67, 111, .10));
+}
+
+.paint-part {
+  fill: #fff;
+  stroke: #44364b;
+  stroke-width: 3.5;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  cursor: pointer;
+  transition: fill .16s ease, filter .16s ease;
+  touch-action: manipulation;
+}
+
+.paint-part:hover {
+  filter: brightness(.97);
+}
+
+.paint-part:focus-visible {
+  outline: none;
+  stroke: #8b55ce;
+  stroke-width: 7;
+}
+
+.paint-part.painted {
+  stroke-width: 3.5;
+}
+
+.palette-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.palette-heading h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+#selectedColourName {
+  color: var(--muted);
+  font-size: .86rem;
+  font-weight: 800;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.colour-swatch {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  min-height: 38px;
+  border: 3px solid white;
+  border-radius: 17px;
+  background: var(--swatch);
+  box-shadow: 0 4px 0 rgba(64, 47, 78, .16), 0 0 0 2px #eadfee;
+  cursor: pointer;
+  transition: transform .15s, box-shadow .15s;
+  touch-action: manipulation;
+}
+
+.colour-swatch:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.colour-swatch.selected {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 0 #d9c4eb, 0 0 0 3px #8552c4;
+}
+
+.colour-swatch.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  place-items: center;
+  width: 27px;
+  height: 27px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: #fff;
+  color: #47334d;
+  font-size: 1rem;
+  font-weight: 900;
+  transform: translate(-50%, -50%);
+}
+
+.game-message {
+  margin: 18px 0 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f5f0ff;
+  color: #654b91;
+  font-size: .98rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.bottom-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0;
+  padding: 20px 24px;
+  border: 2px solid white;
+  border-radius: 23px;
+  background: linear-gradient(120deg, #e9fff3, #eaf5ff);
+  box-shadow: 0 6px 0 #d9e8e7;
+  font-size: 1rem;
+}
+
+.bottom-note > span {
+  font-size: 2rem;
+}
+
+.bottom-note p {
+  margin: 0;
+}
+
+.bottom-note p b {
+  font-size: 1.1rem;
+}
+
+.note-star {
+  margin-left: auto;
+}
+
+footer {
+  padding: 28px 15px;
+  border-top: 2px solid #f3e6f0;
+  background: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+
+footer small {
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 10;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(52, 35, 66, .55);
+  backdrop-filter: blur(5px);
+}
+
+.modal-backdrop[hidden] {
+  display: none;
+}
+
+.win-modal {
+  width: min(100%, 430px);
+  padding: 30px;
+  border: 3px solid white;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #fff, #fff0f7);
+  box-shadow: 0 12px 0 #e7cfe7, 0 25px 70px #35214244;
+  text-align: center;
+  animation: pop .3s ease;
+}
+
+.win-emoji {
+  font-size: 3rem;
+}
+
+.win-modal h2 {
+  margin: 8px 0;
+  font-size: 1.65rem;
+}
+
+.win-modal p {
+  font-size: 1rem;
+}
+
+.final-score strong {
+  color: #8a4dbe;
+  font-size: 1.5rem;
+}
+
+@keyframes pop {
+  from { opacity: 0; transform: scale(.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (min-width: 1000px) {
+  .controls-panel {
+    position: sticky;
+    top: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  html {
+    font-size: 17px;
+  }
+
+  .topbar {
+    padding: 13px 4%;
+  }
+
+  .header-label {
+    padding: 8px 10px;
+    font-size: .78rem;
+  }
+
+  .brand {
+    font-size: 1.15rem;
+  }
+
+  .brand-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .hero {
+    margin: 20px 0;
+    padding: 24px 20px;
+    border-radius: 25px;
+  }
+
+  .hero-art {
+    font-size: 2.7rem;
+  }
+
+  .stats {
+    gap: 10px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 13px;
+    border-radius: 18px;
+  }
+
+  .stat-emoji {
+    flex-basis: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    font-size: 1.35rem;
+  }
+
+  .stat-card strong {
+    font-size: 1.45rem;
+  }
+
+  .game-layout {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .controls-panel {
+    order: 2;
+  }
+
+  .coloring-panel {
+    order: 1;
+  }
+
+  .picture-stage {
+    min-height: 240px;
+  }
+
+  .artwork {
+    width: min(100%, 400px);
+  }
+
+  .palette {
+    gap: 10px;
+  }
+
+  .colour-swatch {
+    border-radius: 13px;
+  }
+
+  .bottom-note {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  html {
+    font-size: 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+  }
+
+  .header-label {
+    max-width: 125px;
+    text-align: center;
+  }
+
+  .brand small {
+    font-size: .6rem;
+  }
+
+  .hero {
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .hero-art {
+    padding-top: 20px;
+    font-size: 2rem;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stat-card {
+    padding: 10px;
+  }
+
+  .stat-card small {
+    font-size: .72rem;
+  }
+
+  .stat-card strong {
+    font-size: 1.3rem;
+  }
+
+  .panel {
+    padding: 17px;
+    border-radius: 22px;
+  }
+
+  .palette {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 13px;
+  }
+
+  .colour-swatch {
+    min-height: 43px;
+  }
+
+  .picture-stage {
+    padding: 9px;
+  }
+
+  .canvas-heading {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+   </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="games.html" aria-label="Kids Park home">
+      <span class="brand-icon">🐣</span>
+      <span>Kids <b>Park</b><small>Read. Imagine. Have Fun!</small></span>
+    </a>
+    <span class="header-label">🎨 Little Artists Club</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">🌈 CREATE • COLOUR • SMILE</span>
+        <h1>Kids Coloring Book</h1>
+        <p>Pick a picture, choose your favourite colours and make your own colourful masterpiece!</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">🖍️ 🦋 🎨</div>
+    </section>
+
+    <section class="stats" aria-label="Game statistics">
+      <div class="stat-card score-card">
+        <span class="stat-emoji">⭐</span>
+        <div><small>Your Score</small><strong id="score">0</strong></div>
+      </div>
+      <div class="stat-card">
+        <span class="stat-emoji">🖌️</span>
+        <div><small>Colours Added</small><strong id="painted">0</strong></div>
+      </div>
+      <div class="stat-card best-card">
+        <span class="stat-emoji">🏆</span>
+        <div><small>Best Score</small><strong id="bestScore">0</strong></div>
+      </div>
+    </section>
+
+    <section class="game-layout">
+      <aside class="panel controls-panel">
+        <h2>🧸 Game Settings</h2>
+
+        <label for="pictureSelect">Choose a picture</label>
+        <select id="pictureSelect">
+          <option value="butterfly">🦋 Happy Butterfly</option>
+          <option value="cat">🐱 Cute Kitty</option>
+          <option value="rocket">🚀 Space Rocket</option>
+        </select>
+
+        <label for="difficulty">Choose difficulty</label>
+        <select id="difficulty">
+          <option value="easy">🌱 Easy — 10 points</option>
+          <option value="medium">🌟 Medium — 20 points</option>
+          <option value="hard">🚀 Hard — 30 points</option>
+        </select>
+
+        <div class="progress-area">
+          <div class="progress-heading">
+            <span>Picture progress</span>
+            <strong id="progressText">0%</strong>
+          </div>
+          <div class="progress-track">
+            <div id="progressBar" class="progress-bar"></div>
+          </div>
+        </div>
+
+        <button id="restartBtn" class="btn btn-primary" type="button">
+          🔄 Start Again
+        </button>
+        <button id="soundBtn" class="btn btn-secondary" type="button"
+          aria-pressed="true">
+          🔊 Sound: ON
+        </button>
+
+        <p class="tip">💡 <b>Little tip:</b> Tap a part of the picture, then tap a colour to paint it!</p>
+      </aside>
+
+      <section class="panel coloring-panel">
+        <div class="canvas-heading">
+          <div>
+            <h2>🖍️ Your Art Board</h2>
+            <p>Choose a colour and tap the picture.</p>
+          </div>
+          <span class="live-badge"><span></span> Ready to paint</span>
+        </div>
+
+        <div class="picture-stage">
+          <div id="artwork" class="artwork" role="group"
+            aria-label="Colouring picture"></div>
+        </div>
+
+        <div class="palette-heading">
+          <h3>🌈 Pick a colour</h3>
+          <span id="selectedColourName">Pink selected</span>
+        </div>
+        <div id="palette" class="palette" aria-label="Colour palette">
+          <button class="colour-swatch selected" style="--swatch:#ff719a"
+            data-colour="#ff719a" data-name="Pink" aria-label="Pink" aria-pressed="true"></button>
+          <button class="colour-swatch" style="--swatch:#ffbd4a"
+            data-colour="#ffbd4a" data-name="Yellow" aria-label="Yellow" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#69d6a0"
+            data-colour="#69d6a0" data-name="Green" aria-label="Green" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#65baff"
+            data-colour="#65baff" data-name="Blue" aria-label="Blue" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#b99aff"
+            data-colour="#b99aff" data-name="Purple" aria-label="Purple" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#ff8b51"
+            data-colour="#ff8b51" data-name="Orange" aria-label="Orange" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#ffed70"
+            data-colour="#ffed70" data-name="Light yellow" aria-label="Light yellow" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#7fceff"
+            data-colour="#7fceff" data-name="Sky blue" aria-label="Sky blue" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#9b6a4b"
+            data-colour="#9b6a4b" data-name="Brown" aria-label="Brown" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#8c99a8"
+            data-colour="#8c99a8" data-name="Grey" aria-label="Grey" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#ffffff"
+            data-colour="#ffffff" data-name="White" aria-label="White" aria-pressed="false"></button>
+          <button class="colour-swatch" style="--swatch:#34394b"
+            data-colour="#34394b" data-name="Dark" aria-label="Dark" aria-pressed="false"></button>
+        </div>
+
+        <p class="game-message" id="gameMessage" role="status" aria-live="polite">
+          🎉 Let’s make something beautiful!
+        </p>
+      </section>
+    </section>
+
+    <section class="bottom-note">
+      <span>🧠</span>
+      <p><b>Learn through play!</b><br>Colouring encourages creativity, imagination and colour recognition.</p>
+      <span class="note-star">✨</span>
+    </section>
+  </main>
+
+  <footer>
+    <p>🐣 Kids Park · Read. Imagine. Have Fun!</p>
+    <small>Made for little artists with love 💖</small>
+  </footer>
+
+  <div class="modal-backdrop" id="winModal" hidden>
+    <div class="win-modal" role="dialog" aria-modal="true"
+      aria-labelledby="winTitle">
+      <div class="win-emoji">🏆🎨🌈</div>
+      <h2 id="winTitle">Amazing, little artist!</h2>
+      <p>You coloured every part of the picture!</p>
+      <p class="final-score">Your score: <strong id="finalScore">0</strong></p>
+      <button id="playAgainBtn" class="btn btn-primary" type="button">
+        🎉 Play Again
+      </button>
+    </div>
+  </div>
+
+  <!-- <script src="script.js"></script> -->
+   <script>
+    
+const scoreElement = document.getElementById("score");
+const paintedElement = document.getElementById("painted");
+const bestScoreElement = document.getElementById("bestScore");
+const pictureSelect = document.getElementById("pictureSelect");
+const difficultySelect = document.getElementById("difficulty");
+const artwork = document.getElementById("artwork");
+const palette = document.getElementById("palette");
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
+const selectedColourName = document.getElementById("selectedColourName");
+const gameMessage = document.getElementById("gameMessage");
+const restartBtn = document.getElementById("restartBtn");
+const soundBtn = document.getElementById("soundBtn");
+const winModal = document.getElementById("winModal");
+const finalScore = document.getElementById("finalScore");
+const playAgainBtn = document.getElementById("playAgainBtn");
+
+const POINTS = {
+  easy: 10,
+  medium: 20,
+  hard: 30
+};
+
+const PICTURES = {
+  butterfly: {
+    label: "Happy Butterfly",
+    svg: `
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="Butterfly colouring picture">
+        <g stroke="#44364b" stroke-width="3.5" stroke-linejoin="round">
+          <path class="paint-part" data-part d="M190 142
+            C160 83 91 48 63 82 C34 117 79 172 166 180 Z"/>
+          <path class="paint-part" data-part d="M210 142
+            C240 83 309 48 337 82 C366 117 321 172 234 180 Z"/>
+          <path class="paint-part" data-part d="M180 174
+            C135 158 87 186 103 225 C116 256 160 239 194 202 Z"/>
+          <path class="paint-part" data-part d="M220 174
+            C265 158 313 186 297 225 C284 256 240 239 206 202 Z"/>
+          <path class="paint-part" data-part d="M184 127
+            Q200 110 216 127 L222 207 Q200 229 178 207 Z"/>
+          <path class="paint-part" data-part d="M191 124
+            Q177 104 165 100 Q179 101 192 114 Z"/>
+          <path class="paint-part" data-part d="M209 124
+            Q223 104 235 100 Q221 101 208 114 Z"/>
+          <path class="paint-part" data-part d="M77 113
+            Q94 95 111 119 Q104 142 82 143 Z"/>
+          <path class="paint-part" data-part d="M323 113
+            Q306 95 289 119 Q296 142 318 143 Z"/>
+          <path class="paint-part" data-part d="M141 196
+            Q154 182 169 201 Q160 221 145 215 Z"/>
+          <path class="paint-part" data-part d="M259 196
+            Q246 182 231 201 Q240 221 255 215 Z"/>
+        </g>
+        <g fill="#44364b">
+          <circle cx="194" cy="143" r="3"/>
+          <circle cx="206" cy="143" r="3"/>
+        </g>
+        <g fill="none" stroke="#44364b" stroke-width="3" stroke-linecap="round">
+          <path d="M185 157 Q200 169 215 157"/>
+        </g>
+        <g fill="#ffbd4a">
+          <circle cx="45" cy="48" r="7"/>
+          <circle cx="355" cy="45" r="9"/>
+          <circle cx="340" cy="275" r="6"/>
+          <circle cx="57" cy="272" r="8"/>
+        </g>
+      </svg>`
+  },
+
+  cat: {
+    label: "Cute Kitty",
+    svg: `
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="Cute cat colouring picture">
+        <g stroke="#44364b" stroke-width="3.5" stroke-linejoin="round">
+          <path class="paint-part" data-part d="M112 125 L104 53
+            L163 91 Q200 75 237 91 L296 53 L288 125
+            Q310 151 303 195 Q295 253 200 253
+            Q105 253 97 195 Q90 151 112 125 Z"/>
+          <path class="paint-part" data-part d="M124 108
+            L116 70 L151 95 Z"/>
+          <path class="paint-part" data-part d="M276 108
+            L284 70 L249 95 Z"/>
+          <path class="paint-part" data-part d="M118 265
+            Q102 239 85 254 Q69 270 90 286
+            L115 295 Q130 286 118 265 Z"/>
+          <path class="paint-part" data-part d="M155 235
+            Q200 215 245 235 L263 293
+            Q200 316 137 293 Z"/>
+          <path class="paint-part" data-part d="M165 180
+            Q175 169 185 180 Q185 194 175 194 Q165 194 165 180 Z"/>
+          <path class="paint-part" data-part d="M215 180
+            Q225 169 235 180 Q235 194 225 194 Q215 194 215 180 Z"/>
+          <path class="paint-part" data-part d="M191 199
+            Q200 191 209 199 L200 209 Z"/>
+          <path class="paint-part" data-part d="M180 213
+            Q200 228 220 213 Q210 238 200 223 Q190 238 180 213 Z"/>
+          <path class="paint-part" data-part d="M150 125
+            Q175 109 192 131 L185 157 Q162 162 150 145 Z"/>
+          <path class="paint-part" data-part d="M250 125
+            Q225 109 208 131 L215 157 Q238 162 250 145 Z"/>
+        </g>
+        <g fill="#44364b">
+          <circle cx="176" cy="182" r="4"/>
+          <circle cx="224" cy="182" r="4"/>
+        </g>
+        <g fill="none" stroke="#44364b" stroke-width="2.5" stroke-linecap="round">
+          <path d="M166 208 L127 202 M165 217 L128 221"/>
+          <path d="M234 208 L273 202 M235 217 L272 221"/>
+        </g>
+        <g fill="#ffbd4a">
+          <circle cx="49" cy="49" r="8"/>
+          <circle cx="350" cy="55" r="7"/>
+          <path d="M331 274 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+        </g>
+      </svg>`
+  },
+
+  rocket: {
+    label: "Space Rocket",
+    svg: `
+      <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg"
+        role="img" aria-label="Rocket colouring picture">
+        <g stroke="#44364b" stroke-width="3.5" stroke-linejoin="round">
+          <path class="paint-part" data-part d="M200 35
+            Q254 83 253 159 L253 235
+            L147 235 L147 159 Q146 83 200 35 Z"/>
+          <path class="paint-part" data-part d="M147 177
+            Q113 188 101 232 L151 220 Z"/>
+          <path class="paint-part" data-part d="M253 177
+            Q287 188 299 232 L249 220 Z"/>
+          <path class="paint-part" data-part d="M176 235
+            L176 270 L200 250 L224 270 L224 235 Z"/>
+          <path class="paint-part" data-part d="M200 82
+            A26 26 0 1 0 200 134
+            A26 26 0 1 0 200 82 Z"/>
+          <path class="paint-part" data-part d="M178 164
+            Q200 147 222 164 L222 190 Q200 204 178 190 Z"/>
+          <path class="paint-part" data-part d="M178 238
+            L178 267 L200 252 Z"/>
+          <path class="paint-part" data-part d="M222 238
+            L222 267 L200 252 Z"/>
+          <path class="paint-part" data-part d="M182 278
+            Q200 294 218 278 L229 306
+            Q200 329 171 306 Z"/>
+          <path class="paint-part" data-part d="M187 286
+            Q200 299 213 286 L219 304
+            Q200 316 181 304 Z"/>
+        </g>
+        <g fill="#ffbd4a">
+          <path d="M74 72 l5 13 13 5 -13 5 -5 13 -5 -13 -13 -5 13 -5z"/>
+          <path d="M323 103 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+          <path d="M78 220 l4 10 10 4 -10 4 -4 10 -4 -10 -10 -4 10 -4z"/>
+        </g>
+        <g fill="#b99aff" stroke="#44364b" stroke-width="2">
+          <circle cx="316" cy="190" r="10"/>
+          <circle cx="84" cy="152" r="7"/>
+          <circle cx="308" cy="50" r="6"/>
+        </g>
+      </svg>`
+  }
+};
+
+let selectedColour = "#ff719a";
+let selectedColourLabel = "Pink";
+let score = 0;
+let paintedCount = 0;
+let totalParts = 0;
+let soundEnabled = true;
+let audioContext = null;
+let gameComplete = false;
+
+// Save each difficulty's best score separately in this browser.
+function storageKey() {
+  return `kidsParkColoringBest_${difficultySelect.value}`;
+}
+
+function getBestScore() {
+  try {
+    return Number(localStorage.getItem(storageKey())) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+function saveBestScore(value) {
+  try {
+    localStorage.setItem(storageKey(), String(value));
+  } catch {
+    // The game still works if browser storage is unavailable.
+  }
+}
+
+function updateStats() {
+  scoreElement.textContent = score;
+  paintedElement.textContent = `${paintedCount}/${totalParts}`;
+  bestScoreElement.textContent = getBestScore();
+
+  const percent = totalParts
+    ? Math.round((paintedCount / totalParts) * 100)
+    : 0;
+
+  progressBar.style.width = `${percent}%`;
+  progressText.textContent = `${percent}%`;
+}
+
+function playSound(kind = "paint") {
+  if (!soundEnabled) return;
+
+  try {
+    const AudioContextClass =
+      window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) return;
+
+    if (!audioContext) audioContext = new AudioContextClass();
+
+    if (audioContext.state === "suspended") {
+      audioContext.resume();
+    }
+
+    const notes = {
+      paint: { frequency: 550, duration: 0.09 },
+      win: { frequency: 880, duration: 0.22 },
+      restart: { frequency: 350, duration: 0.08 }
+    };
+
+    const note = notes[kind] || notes.paint;
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = "sine";
+    oscillator.frequency.setValueAtTime(
+      note.frequency, audioContext.currentTime
+    );
+
+    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+      0.12, audioContext.currentTime + 0.015
+    );
+    gain.gain.exponentialRampToValueAtTime(
+      0.0001, audioContext.currentTime + note.duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + note.duration + 0.02);
+  } catch {
+    // Audio is optional; painting remains available without it.
+  }
+}
+
+function selectColour(button) {
+  document.querySelectorAll(".colour-swatch").forEach(swatch => {
+    const active = swatch === button;
+    swatch.classList.toggle("selected", active);
+    swatch.setAttribute("aria-pressed", String(active));
+  });
+
+  selectedColour = button.dataset.colour;
+  selectedColourLabel = button.dataset.name;
+  selectedColourName.textContent = `${selectedColourLabel} selected`;
+
+  playSound("paint");
+}
+
+function paintPart(part) {
+  if (gameComplete) return;
+
+  const alreadyPainted = part.dataset.painted === "true";
+
+  // Repainting an existing region changes its colour but does not
+  // award extra points.
+  if (alreadyPainted) {
+    part.style.fill = selectedColour;
+    playSound("paint");
+    gameMessage.textContent =
+      `🎨 Beautiful! You changed this part to ${selectedColourLabel}.`;
+    return;
+  }
+
+  part.dataset.painted = "true";
+  part.style.fill = selectedColour;
+  part.classList.add("painted");
+
+  paintedCount++;
+  score += POINTS[difficultySelect.value];
+
+  const best = getBestScore();
+  if (score > best) saveBestScore(score);
+
+  updateStats();
+  playSound("paint");
+
+  if (paintedCount === totalParts) {
+    finishGame();
+  } else {
+    gameMessage.textContent =
+      `✨ Great colouring! +${POINTS[difficultySelect.value]} points. Keep going!`;
+  }
+}
+
+function finishGame() {
+  gameComplete = true;
+  finalScore.textContent = score;
+  winModal.hidden = false;
+  gameMessage.textContent =
+    "🏆 Wonderful work! You finished your colouring picture!";
+  updateStats();
+  playSound("win");
+}
+
+function loadPicture() {
+  const picture = PICTURES[pictureSelect.value];
+
+  artwork.innerHTML = picture.svg;
+
+  const parts = artwork.querySelectorAll("[data-part]");
+  totalParts = parts.length;
+
+  parts.forEach((part, index) => {
+    part.setAttribute("tabindex", "0");
+    part.setAttribute("role", "button");
+    part.setAttribute(
+      "aria-label",
+      `${picture.label} part ${index + 1}, not coloured`
+    );
+
+    part.addEventListener("click", () => paintPart(part));
+
+    part.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        paintPart(part);
+      }
+    });
+  });
+
+  updateStats();
+}
+
+function restartGame() {
+  score = 0;
+  paintedCount = 0;
+  gameComplete = false;
+  winModal.hidden = true;
+
+  loadPicture();
+
+  gameMessage.textContent =
+    "🎉 Fresh page! Pick a colour and start painting!";
+  playSound("restart");
+}
+
+palette.addEventListener("click", event => {
+  const button = event.target.closest(".colour-swatch");
+  if (!button) return;
+  selectColour(button);
+});
+
+pictureSelect.addEventListener("change", () => {
+  restartGame();
+});
+
+difficultySelect.addEventListener("change", () => {
+  restartGame();
+});
+
+restartBtn.addEventListener("click", restartGame);
+playAgainBtn.addEventListener("click", restartGame);
+
+soundBtn.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+
+  soundBtn.textContent = soundEnabled
+    ? "🔊 Sound: ON"
+    : "🔇 Sound: OFF";
+
+  soundBtn.setAttribute("aria-pressed", String(soundEnabled));
+
+  if (soundEnabled) playSound("paint");
+});
+
+winModal.addEventListener("click", event => {
+  if (event.target === winModal) {
+    winModal.hidden = true;
+  }
+});
+
+// Start with the butterfly and pink colour selected.
+loadPicture();
+
+   </script>
+</body>
+</html>

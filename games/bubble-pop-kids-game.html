@@ -1,0 +1,1572 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#eaf8ff">
+  <meta name="description" content="Play Bubble Pop Adventure, a colourful bubble popping game for kids on Kids Park.">
+  <title>Bubble Pop Adventure | Kids Park</title>
+  <!-- ================= FAVICON ================= -->
+
+<link
+    rel="shortcut icon"
+    href="../favicon.ico"
+    type="image/x-icon">
+  <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --ink: #343b67;
+  --muted: #697399;
+  --pink: #ff75ac;
+  --purple: #8259dc;
+  --blue: #69c8ff;
+  --card: #ffffff;
+  --shadow: 0 8px 0 #d9e4fa, 0 15px 30px rgba(60, 91, 155, .10);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 7% 8%, #ffe2f0 0, transparent 21rem),
+    radial-gradient(circle at 92% 18%, #d6f3ff 0, transparent 25rem),
+    #f6f9ff;
+}
+
+button, select {
+  font: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px max(4%, calc((100% - 1240px) / 2));
+  background: rgba(255, 255, 255, .92);
+  border-bottom: 2px solid #e8efff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.brand-logo {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff, #ffe3ef);
+  box-shadow: 0 5px 0 #f1c6de, 0 8px 14px #e6d8f8;
+  font-size: 2rem;
+}
+
+.brand b {
+  color: var(--pink);
+}
+
+.brand small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .66rem;
+  font-weight: 800;
+}
+
+.header-pill {
+  padding: 10px 16px;
+  border: 2px solid #d9eaff;
+  border-radius: 30px;
+  background: #edf7ff;
+  color: #4777a8;
+  font-size: .9rem;
+  font-weight: 900;
+}
+
+.container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 28px 0;
+  padding: clamp(24px, 4vw, 44px);
+  overflow: hidden;
+  border: 2px solid #fff;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #ffe8f3, #eee7ff 55%, #dff6ff);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 22px;
+  background: white;
+  color: #8b56b6;
+  font-size: .83rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+h1 {
+  margin: 12px 0 10px;
+  font-size: clamp(2.1rem, 5vw, 3.7rem);
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+}
+
+h1 span {
+  color: #8159db;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 0;
+  color: #5e6688;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 19px;
+}
+
+.hero-tags span {
+  padding: 7px 12px;
+  border: 1px solid #ffffff;
+  border-radius: 20px;
+  background: #ffffffbd;
+  font-size: .83rem;
+  font-weight: 900;
+}
+
+.hero-art {
+  position: relative;
+  flex: 0 0 220px;
+  height: 200px;
+}
+
+.hero-bubble {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  border: 3px solid #ffffffd9;
+  border-radius: 50%;
+  background: radial-gradient(circle at 28% 23%, #fff 0 8%, #a9e9ff 18%, #78bfff 58%, #b59cff 100%);
+  box-shadow: inset -8px -10px 17px #6c7ae544,
+              inset 6px 7px 12px #ffffffb8,
+              0 10px 0 #c5b7ef,
+              0 17px 25px #8c7bc733;
+  color: white;
+  font-size: 2.6rem;
+  text-shadow: 0 3px 5px #687cb455;
+}
+
+.bubble-one {
+  top: 28px;
+  left: 25px;
+  width: 120px;
+  height: 120px;
+  transform: rotate(-9deg);
+}
+
+.bubble-two {
+  top: 0;
+  right: 0;
+  width: 76px;
+  height: 76px;
+  font-size: 1.6rem;
+  background: radial-gradient(circle at 25% 20%, #fff, #d2c4ff 30%, #8e8cff 75%);
+  box-shadow: inset -7px -7px 14px #6657b444, inset 5px 6px 10px #ffffffbd,
+              0 6px 0 #c6b5f3;
+}
+
+.bubble-three {
+  right: 20px;
+  bottom: 5px;
+  width: 90px;
+  height: 90px;
+  font-size: 2rem;
+  background: radial-gradient(circle at 25% 20%, #fff, #ffc4e0 32%, #ff83b9 80%);
+  box-shadow: inset -7px -7px 14px #c6538744, inset 5px 6px 10px #ffffffbd,
+              0 7px 0 #edb3d1;
+}
+
+.hero-sparkle {
+  position: absolute;
+  top: 95px;
+  right: 20px;
+  color: #ffb845;
+  font-size: 2rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  min-width: 0;
+  padding: 18px;
+  border: 2px solid white;
+  border-radius: 24px;
+  background: white;
+  box-shadow: 0 6px 0 #dce6f8, 0 10px 20px #5b72a30b;
+}
+
+.score-card {
+  background: linear-gradient(130deg, #fff, #fff0f7);
+}
+
+.time-card {
+  background: linear-gradient(130deg, #fff, #eaf7ff);
+}
+
+.best-card {
+  background: linear-gradient(130deg, #fff, #fff8dd);
+}
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  background: #f0eaff;
+  font-size: 1.8rem;
+}
+
+.stat-card small {
+  display: block;
+  color: var(--muted);
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.8rem;
+  line-height: 1.3;
+  font-weight: 900;
+}
+
+.stat-card .seconds {
+  display: inline;
+  font-size: .75rem;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, .75fr) minmax(0, 1.7fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(18px, 2.4vw, 28px);
+  border: 2px solid white;
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.settings-panel label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+select {
+  width: 100%;
+  min-height: 55px;
+  padding: 12px;
+  border: 2px solid #dce4f6;
+  border-radius: 15px;
+  outline: none;
+  color: var(--ink);
+  background: #fbfcff;
+  font-size: .95rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+select:focus-visible, button:focus-visible {
+  outline: 3px solid #8359d8;
+  outline-offset: 3px;
+}
+
+.level-info {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 15px;
+  background: #f0f5ff;
+  color: #5b6696;
+  font-size: .87rem;
+  font-weight: 800;
+}
+
+.how-to {
+  margin: 22px 0;
+  padding: 16px;
+  border: 2px dashed #dce3fa;
+  border-radius: 18px;
+  background: #f8faff;
+}
+
+.how-to h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.how-to ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.how-to li {
+  margin: 7px 0;
+  color: #626d90;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.btn {
+  width: 100%;
+  min-height: 56px;
+  margin: 6px 0;
+  padding: 13px 16px;
+  border: 0;
+  border-radius: 17px;
+  font-size: 1.02rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .15s, filter .15s, box-shadow .15s;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #ff79b1, #e85caa);
+  box-shadow: 0 5px 0 #c94a90;
+}
+
+.btn-secondary {
+  color: #5c5b9c;
+  background: #eaeaff;
+  box-shadow: 0 5px 0 #cdd0f4;
+}
+
+.btn-sound {
+  color: #317c78;
+  background: #e4fbf3;
+  box-shadow: 0 5px 0 #b9e7d9;
+}
+
+.tip {
+  margin: 22px 0 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: #fff8e6;
+  color: #846b45;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.play-panel {
+  padding: clamp(16px, 2.5vw, 28px);
+}
+
+.play-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.play-heading h2 {
+  margin-bottom: 3px;
+}
+
+.play-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .95rem;
+  font-weight: 700;
+}
+
+.combo-pill {
+  padding: 8px 12px;
+  border: 1px solid #ffdfc4;
+  border-radius: 22px;
+  background: #fff5e9;
+  color: #a96b36;
+  font-size: .87rem;
+  font-weight: 900;
+}
+
+.combo-pill strong {
+  display: inline-block;
+  min-width: 23px;
+  margin-left: 4px;
+  color: #e37b43;
+  font-size: 1rem;
+}
+
+.playfield {
+  position: relative;
+  min-height: 490px;
+  margin-top: 20px;
+  overflow: hidden;
+  isolation: isolate;
+  border: 3px solid white;
+  border-radius: 27px;
+  background:
+    radial-gradient(circle at 15% 20%, #ffffffad 0 2px, transparent 3px),
+    radial-gradient(circle at 82% 28%, #ffffffa8 0 3px, transparent 4px),
+    linear-gradient(180deg, #bceaff 0%, #e1f5ff 56%, #d7f8ef 100%);
+  background-size: 62px 62px, 83px 83px, auto;
+  box-shadow: inset 0 0 0 2px #ffffff8a, inset 0 -20px 45px #8ce4d833;
+  touch-action: manipulation;
+}
+
+.scene-cloud {
+  position: absolute;
+  z-index: -1;
+  width: 135px;
+  height: 42px;
+  border-radius: 50px;
+  background: #ffffffa3;
+  filter: drop-shadow(0 5px 0 #a4d9f633);
+}
+
+.scene-cloud::before,
+.scene-cloud::after {
+  content: "";
+  position: absolute;
+  bottom: 12px;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.scene-cloud::before {
+  left: 20px;
+}
+
+.scene-cloud::after {
+  right: 20px;
+  width: 43px;
+  height: 43px;
+}
+
+.cloud-one {
+  top: 44px;
+  left: -30px;
+}
+
+.cloud-two {
+  top: 110px;
+  right: -40px;
+  transform: scale(.8);
+}
+
+.scene-sparkle {
+  position: absolute;
+  z-index: -1;
+  color: #ffffffd9;
+  text-shadow: 0 2px 5px #72b8e955;
+}
+
+.sparkle-one {
+  top: 28%;
+  left: 15%;
+  font-size: 2rem;
+}
+
+.sparkle-two {
+  top: 55%;
+  right: 13%;
+  font-size: 2.4rem;
+}
+
+.sparkle-three {
+  bottom: 12%;
+  left: 28%;
+  font-size: 1.8rem;
+}
+
+.start-message,
+.game-over-message {
+  position: absolute;
+  z-index: 3;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
+  text-align: center;
+  background: #e4f5ff91;
+  backdrop-filter: blur(3px);
+}
+
+.start-message[hidden],
+.game-over-message[hidden] {
+  display: none;
+}
+
+.start-emoji {
+  font-size: 4.5rem;
+  line-height: 1.2;
+  filter: drop-shadow(0 8px 0 #9ecde755);
+}
+
+.start-message h3,
+.game-over-message h3 {
+  margin: 10px 0 5px;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 900;
+}
+
+.start-message p,
+.game-over-message p {
+  max-width: 340px;
+  margin: 4px 0 18px;
+  color: #4e6486;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.start-inside {
+  width: min(100%, 260px);
+}
+
+.bubble {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 3px solid #ffffffd9;
+  border-radius: 50%;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  background:
+    radial-gradient(circle at 27% 21%, #ffffff 0 5%, #ffffffd9 6% 10%, transparent 11%),
+    radial-gradient(circle at 35% 30%, var(--bubble-light) 0, var(--bubble-main) 42%, var(--bubble-dark) 100%);
+  box-shadow:
+    inset -8px -11px 15px #455a9a32,
+    inset 7px 7px 12px #ffffffbb,
+    0 7px 0 var(--bubble-shadow),
+    0 13px 19px #4b73a62b;
+  text-shadow: 0 2px 5px #455a9a4d;
+  animation: bubbleFloat 2.7s ease-in-out infinite alternate;
+  transform: translateZ(0);
+}
+
+.bubble::before {
+  content: "";
+  position: absolute;
+  top: 18%;
+  right: 20%;
+  width: 17%;
+  height: 10%;
+  border-radius: 50%;
+  background: #ffffffd9;
+  transform: rotate(-35deg);
+}
+
+.bubble::after {
+  content: "";
+  position: absolute;
+  bottom: 15%;
+  left: 21%;
+  width: 24%;
+  height: 11%;
+  border-radius: 50%;
+  background: #ffffff4d;
+  transform: rotate(-28deg);
+}
+
+.bubble:hover {
+  filter: brightness(1.06);
+}
+
+.bubble:active {
+  transform: scale(.88);
+}
+
+.bubble.bonus {
+  background:
+    radial-gradient(circle at 27% 21%, #ffffff 0 5%, #fffde8d9 6% 10%, transparent 11%),
+    radial-gradient(circle at 35% 30%, #fff9c2 0, #ffd65d 42%, #ff9d38 100%);
+  box-shadow:
+    inset -8px -11px 15px #bb7b2732,
+    inset 7px 7px 12px #ffffffbb,
+    0 7px 0 #e3a43e,
+    0 13px 19px #4b73a62b;
+  animation: bubbleFloat 1.8s ease-in-out infinite alternate, bonusGlow 1s ease-in-out infinite alternate;
+}
+
+.bubble.pop {
+  pointer-events: none;
+  animation: bubblePop .2s ease-out forwards;
+}
+
+.bubble-value {
+  position: relative;
+  z-index: 1;
+  font-size: .8rem;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.pop-text {
+  position: absolute;
+  z-index: 4;
+  color: #6045a4;
+  font-size: 1.25rem;
+  font-weight: 900;
+  pointer-events: none;
+  text-shadow: 0 2px 0 white;
+  animation: pointsUp .65s ease-out forwards;
+}
+
+.playfield-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 13px;
+  color: #6a7295;
+  font-size: .88rem;
+  font-weight: 900;
+}
+
+.bottom-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0;
+  padding: 20px 24px;
+  border: 2px solid white;
+  border-radius: 23px;
+  background: linear-gradient(120deg, #e6fff3, #e8f2ff);
+  box-shadow: 0 6px 0 #d4e9e8;
+}
+
+.note-icon,
+.note-star {
+  font-size: 2rem;
+}
+
+.bottom-note p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.bottom-note p b {
+  font-size: 1.12rem;
+}
+
+.note-star {
+  margin-left: auto;
+}
+
+footer {
+  padding: 28px 15px;
+  border-top: 2px solid #e5ecfb;
+  background: #fff;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+  font-size: 1.02rem;
+  font-weight: 900;
+}
+
+footer small {
+  color: var(--muted);
+  font-size: .86rem;
+}
+
+@keyframes bubbleFloat {
+  from { margin-top: 0; }
+  to { margin-top: -8px; }
+}
+
+@keyframes bonusGlow {
+  from { filter: brightness(1); }
+  to { filter: brightness(1.12); }
+}
+
+@keyframes bubblePop {
+  0% { opacity: 1; transform: scale(1); }
+  70% { opacity: .8; transform: scale(1.3); }
+  100% { opacity: 0; transform: scale(.1); }
+}
+
+@keyframes pointsUp {
+  from { opacity: 1; transform: translateY(0) scale(.8); }
+  to { opacity: 0; transform: translateY(-45px) scale(1.15); }
+}
+
+@media (min-width: 1000px) {
+  .settings-panel {
+    position: sticky;
+    top: 18px;
+  }
+}
+
+@media (max-width: 850px) {
+  .game-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .settings-panel {
+    order: 2;
+  }
+
+  .play-panel {
+    order: 1;
+  }
+
+  .playfield {
+    min-height: 450px;
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 17px;
+  }
+
+  .topbar {
+    padding: 12px 4%;
+  }
+
+  .brand {
+    font-size: 1.18rem;
+  }
+
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 15px;
+  }
+
+  .header-pill {
+    max-width: 145px;
+    padding: 8px 10px;
+    font-size: .74rem;
+    text-align: center;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .hero {
+    margin: 20px 0;
+    padding: 24px 20px;
+    border-radius: 25px;
+  }
+
+  .hero-art {
+    flex-basis: 90px;
+    height: 150px;
+    transform: scale(.75);
+    transform-origin: center right;
+  }
+
+  .bubble-one {
+    left: -10px;
+  }
+
+  .bubble-two {
+    right: -10px;
+  }
+
+  .bubble-three {
+    right: -4px;
+  }
+
+  .hero-tags {
+    gap: 7px;
+  }
+
+  .hero-tags span {
+    font-size: .73rem;
+  }
+
+  .stats {
+    gap: 9px;
+  }
+
+  .stat-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 12px;
+    border-radius: 18px;
+  }
+
+  .stat-icon {
+    flex-basis: auto;
+    width: 40px;
+    height: 40px;
+    border-radius: 13px;
+    font-size: 1.4rem;
+  }
+
+  .stat-card small {
+    font-size: .73rem;
+  }
+
+  .stat-card strong {
+    font-size: 1.45rem;
+  }
+
+  .panel {
+    padding: 18px;
+    border-radius: 23px;
+  }
+
+  .playfield {
+    min-height: 430px;
+    border-radius: 22px;
+  }
+
+  .bubble {
+    border-width: 2px;
+  }
+
+  .playfield-footer {
+    flex-wrap: wrap;
+    font-size: .8rem;
+  }
+
+  .bottom-note {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 390px) {
+  html {
+    font-size: 16px;
+  }
+
+  .header-pill {
+    max-width: 115px;
+  }
+
+  .hero {
+    gap: 0;
+    padding: 20px 14px;
+  }
+
+  .hero-art {
+    flex-basis: 72px;
+    transform: scale(.62);
+    transform-origin: center right;
+  }
+
+  .stats {
+    gap: 7px;
+  }
+
+  .stat-card {
+    padding: 9px;
+  }
+
+  .stat-card strong {
+    font-size: 1.25rem;
+  }
+
+  .playfield {
+    min-height: 400px;
+  }
+
+  .bottom-note {
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand" aria-label="Kids Park home">
+      <span class="brand-logo">🐣</span>
+      <span>Kids <b>Park</b><small>Read. Imagine. Have Fun!</small></span>
+    </a>
+    <div class="header-pill">🫧 Little Bubble Heroes</div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">🌈 READY, SET, POP!</span>
+        <h1>Bubble Pop <span>Adventure!</span></h1>
+        <p>Tap the floating bubbles, collect points and beat your best score. Let's have a bubbly adventure!</p>
+        <div class="hero-tags">
+          <span>⭐ Earn points</span>
+          <span>🫧 Pop bubbles</span>
+          <span>🏆 Beat your best</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span class="hero-bubble bubble-one">🫧</span>
+        <span class="hero-bubble bubble-two">💙</span>
+        <span class="hero-bubble bubble-three">🫧</span>
+        <span class="hero-sparkle">✨</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Game statistics">
+      <article class="stat-card score-card">
+        <span class="stat-icon">⭐</span>
+        <div><small>Your Score</small><strong id="score">0</strong></div>
+      </article>
+      <article class="stat-card time-card">
+        <span class="stat-icon">⏱️</span>
+        <div><small>Time Left</small><strong><span id="time">30</span><small class="seconds"> sec</small></strong></div>
+      </article>
+      <article class="stat-card best-card">
+        <span class="stat-icon">🏆</span>
+        <div><small>Best Score</small><strong id="bestScore">0</strong></div>
+      </article>
+    </section>
+
+    <section class="game-layout">
+      <aside class="panel settings-panel">
+        <h2>🎮 Game Settings</h2>
+
+        <label for="difficulty">Choose difficulty</label>
+        <select id="difficulty">
+          <option value="easy">🌱 Easy — 45 seconds</option>
+          <option value="medium">🌟 Medium — 30 seconds</option>
+          <option value="hard">🚀 Hard — 20 seconds</option>
+        </select>
+
+        <div class="level-info" id="levelInfo">
+          🌼 Easy mode: Relax and pop at your own pace!
+        </div>
+
+        <div class="how-to">
+          <h3>🫧 How to play</h3>
+          <ul>
+            <li>Tap a bubble to pop it.</li>
+            <li>Big bubbles give more points.</li>
+            <li>Golden bubbles are bonus bubbles!</li>
+            <li>Pop bubbles quickly to build a combo.</li>
+          </ul>
+        </div>
+
+        <button id="startBtn" class="btn btn-primary" type="button">
+          ▶️ Start Game
+        </button>
+        <button id="restartBtn" class="btn btn-secondary" type="button">
+          🔄 Restart Game
+        </button>
+        <button id="soundBtn" class="btn btn-sound" type="button"
+          aria-pressed="true">
+          🔊 Sound: ON
+        </button>
+
+        <p class="tip">💡 <b>Pro tip:</b> Look for shiny golden bubbles for extra points!</p>
+      </aside>
+
+      <section class="panel play-panel">
+        <div class="play-heading">
+          <div>
+            <h2>🫧 Bubble Playground</h2>
+            <p id="gameStatus" role="status" aria-live="polite">Press Start Game to begin!</p>
+          </div>
+          <div class="combo-pill">🔥 Combo <strong id="combo">0</strong></div>
+        </div>
+
+        <div class="playfield" id="playfield" aria-label="Bubble popping play area">
+          <div class="scene-cloud cloud-one"></div>
+          <div class="scene-cloud cloud-two"></div>
+          <div class="scene-sparkle sparkle-one">✦</div>
+          <div class="scene-sparkle sparkle-two">✧</div>
+          <div class="scene-sparkle sparkle-three">✦</div>
+          <div class="start-message" id="startMessage">
+            <div class="start-emoji">🫧</div>
+            <h3>Ready to Pop?</h3>
+            <p>Tap the button below and let the bubble fun begin!</p>
+            <button class="btn btn-primary start-inside" id="insideStartBtn" type="button">
+              🚀 Let's Play!
+            </button>
+          </div>
+          <div class="game-over-message" id="gameOverMessage" hidden>
+            <div class="start-emoji">🏆</div>
+            <h3>Fantastic Popping!</h3>
+            <p>Your final score is <strong id="finalScore">0</strong></p>
+            <button class="btn btn-primary" id="playAgainBtn" type="button">
+              🎉 Play Again
+            </button>
+          </div>
+        </div>
+
+        <div class="playfield-footer">
+          <span>🫧 Pop, pop, pop!</span>
+          <span id="bubbleCount">Bubbles popped: 0</span>
+        </div>
+      </section>
+    </section>
+
+    <section class="bottom-note">
+      <span class="note-icon">🧠</span>
+      <p><b>Play, learn and smile!</b><br>Have fun, practise quick reactions and try to beat your own record.</p>
+      <span class="note-star">✨</span>
+    </section>
+  </main>
+
+  <footer>
+    <p>🐣 Kids Park · Read. Imagine. Have Fun!</p>
+    <small>Made for little bubble poppers with love 💖</small>
+  </footer>
+
+  <script>
+    
+const scoreEl = document.getElementById("score");
+const timeEl = document.getElementById("time");
+const bestScoreEl = document.getElementById("bestScore");
+const comboEl = document.getElementById("combo");
+const bubbleCountEl = document.getElementById("bubbleCount");
+
+const difficultySelect = document.getElementById("difficulty");
+const levelInfo = document.getElementById("levelInfo");
+const playfield = document.getElementById("playfield");
+const gameStatus = document.getElementById("gameStatus");
+
+const startMessage = document.getElementById("startMessage");
+const gameOverMessage = document.getElementById("gameOverMessage");
+const finalScoreEl = document.getElementById("finalScore");
+
+const startBtn = document.getElementById("startBtn");
+const insideStartBtn = document.getElementById("insideStartBtn");
+const restartBtn = document.getElementById("restartBtn");
+const playAgainBtn = document.getElementById("playAgainBtn");
+const soundBtn = document.getElementById("soundBtn");
+
+const LEVELS = {
+  easy: {
+    time: 45,
+    spawnDelay: 850,
+    minSize: 68,
+    maxSize: 100,
+    bonusChance: 0.12,
+    message: "🌼 Easy mode: Relax and pop at your own pace!"
+  },
+  medium: {
+    time: 30,
+    spawnDelay: 650,
+    minSize: 56,
+    maxSize: 86,
+    bonusChance: 0.16,
+    message: "🌟 Medium mode: Pop quickly and build your combo!"
+  },
+  hard: {
+    time: 20,
+    spawnDelay: 450,
+    minSize: 46,
+    maxSize: 72,
+    bonusChance: 0.20,
+    message: "🚀 Hard mode: Quick fingers! Can you beat your record?"
+  }
+};
+
+const BUBBLE_COLOURS = [
+  {
+    main: "#ff94c6",
+    light: "#ffe5f2",
+    dark: "#e64f9c",
+    shadow: "#ce6da5"
+  },
+  {
+    main: "#83d9ff",
+    light: "#e8fbff",
+    dark: "#4a9de8",
+    shadow: "#6ba6d6"
+  },
+  {
+    main: "#b7a0ff",
+    light: "#f1eaff",
+    dark: "#7959dc",
+    shadow: "#9681d7"
+  },
+  {
+    main: "#83e8c4",
+    light: "#eafff5",
+    dark: "#39b98e",
+    shadow: "#67c7a6"
+  },
+  {
+    main: "#ffcf70",
+    light: "#fff8d7",
+    dark: "#f19a37",
+    shadow: "#dfa354"
+  },
+  {
+    main: "#ff9c8c",
+    light: "#fff0e9",
+    dark: "#ef675f",
+    shadow: "#db8b82"
+  }
+];
+
+let score = 0;
+let timeLeft = LEVELS.easy.time;
+let bubblesPopped = 0;
+let combo = 0;
+let running = false;
+let soundEnabled = true;
+let timerInterval = null;
+let spawnTimeout = null;
+let audioContext = null;
+let lastPopTime = 0;
+let gameToken = 0;
+
+function currentLevel() {
+  return LEVELS[difficultySelect.value];
+}
+
+function getBestScore() {
+  try {
+    return Number(
+      localStorage.getItem(`kidsParkBubbleBest_${difficultySelect.value}`)
+    ) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+function saveBestScore(value) {
+  try {
+    localStorage.setItem(
+      `kidsParkBubbleBest_${difficultySelect.value}`,
+      String(value)
+    );
+  } catch {
+    // Game still works if local storage is unavailable.
+  }
+}
+
+function updateStats() {
+  scoreEl.textContent = score;
+  timeEl.textContent = timeLeft;
+  bestScoreEl.textContent = getBestScore();
+  comboEl.textContent = combo;
+  bubbleCountEl.textContent = `Bubbles popped: ${bubblesPopped}`;
+}
+
+function playSound(kind = "pop") {
+  if (!soundEnabled) return;
+
+  try {
+    const AudioContextClass =
+      window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) return;
+
+    if (!audioContext) {
+      audioContext = new AudioContextClass();
+    }
+
+    if (audioContext.state === "suspended") {
+      audioContext.resume();
+    }
+
+    const sounds = {
+      pop: { frequency: 640, duration: 0.09, type: "sine" },
+      bonus: { frequency: 1000, duration: 0.16, type: "sine" },
+      start: { frequency: 440, duration: 0.12, type: "triangle" },
+      end: { frequency: 320, duration: 0.24, type: "triangle" }
+    };
+
+    const sound = sounds[kind] || sounds.pop;
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = sound.type;
+    oscillator.frequency.setValueAtTime(
+      sound.frequency,
+      audioContext.currentTime
+    );
+
+    if (kind === "bonus") {
+      oscillator.frequency.linearRampToValueAtTime(
+        1450,
+        audioContext.currentTime + sound.duration
+      );
+    }
+
+    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+      0.13,
+      audioContext.currentTime + 0.012
+    );
+    gain.gain.exponentialRampToValueAtTime(
+      0.0001,
+      audioContext.currentTime + sound.duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + sound.duration + 0.02);
+  } catch {
+    // Sound is optional. The game can still be played silently.
+  }
+}
+
+function updateLevelInfo() {
+  levelInfo.textContent = currentLevel().message;
+  timeLeft = currentLevel().time;
+  updateStats();
+}
+
+function clearBubbles() {
+  playfield.querySelectorAll(".bubble, .pop-text").forEach(element => {
+    element.remove();
+  });
+}
+
+function clearGameTimers() {
+  if (timerInterval !== null) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+
+  if (spawnTimeout !== null) {
+    clearTimeout(spawnTimeout);
+    spawnTimeout = null;
+  }
+}
+
+function showPopText(x, y, text) {
+  const label = document.createElement("span");
+  label.className = "pop-text";
+  label.textContent = text;
+  label.style.left = `${x}px`;
+  label.style.top = `${y}px`;
+
+  playfield.appendChild(label);
+
+  window.setTimeout(() => label.remove(), 700);
+}
+
+function createBubble(token) {
+  if (!running || token !== gameToken) return;
+
+  const level = currentLevel();
+  const fieldWidth = playfield.clientWidth;
+  const fieldHeight = playfield.clientHeight;
+
+  const size = Math.round(
+    level.minSize + Math.random() * (level.maxSize - level.minSize)
+  );
+
+  const isBonus = Math.random() < level.bonusChance;
+  const colour = BUBBLE_COLOURS[
+    Math.floor(Math.random() * BUBBLE_COLOURS.length)
+  ];
+
+  const bubble = document.createElement("button");
+  bubble.type = "button";
+  bubble.className = isBonus ? "bubble bonus" : "bubble";
+
+  bubble.setAttribute(
+    "aria-label",
+    isBonus ? "Golden bonus bubble, tap for extra points" : "Pop bubble"
+  );
+
+  bubble.style.width = `${size}px`;
+  bubble.style.height = `${size}px`;
+  bubble.style.left = `${Math.max(0, Math.random() * (fieldWidth - size))}px`;
+  bubble.style.top = `${Math.max(0, Math.random() * (fieldHeight - size))}px`;
+
+  bubble.style.setProperty("--bubble-main", colour.main);
+  bubble.style.setProperty("--bubble-light", colour.light);
+  bubble.style.setProperty("--bubble-dark", colour.dark);
+  bubble.style.setProperty("--bubble-shadow", colour.shadow);
+
+  if (isBonus) {
+    bubble.innerHTML = '<span class="bubble-value">+' +
+      (POINTS_FOR_BONUS()) + ' ✨</span>';
+  } else {
+    bubble.innerHTML = '<span class="bubble-value">POP!</span>';
+  }
+
+  bubble.addEventListener("click", () => {
+    if (!running || token !== gameToken || bubble.classList.contains("pop")) {
+      return;
+    }
+
+    popBubble(bubble, isBonus, token);
+  });
+
+  playfield.appendChild(bubble);
+
+  // Remove bubbles that were not popped after a short time.
+  const lifetime = difficultySelect.value === "hard" ? 1800 : 2600;
+
+  window.setTimeout(() => {
+    if (bubble.isConnected && !bubble.classList.contains("pop")) {
+      bubble.remove();
+    }
+  }, lifetime);
+
+  spawnTimeout = window.setTimeout(
+    () => createBubble(token),
+    level.spawnDelay
+  );
+}
+
+function POINTS_FOR_BONUS() {
+  return difficultySelect.value === "hard" ? 50 : 30;
+}
+
+function popBubble(bubble, isBonus, token) {
+  if (!running || token !== gameToken) return;
+
+  const fieldRect = playfield.getBoundingClientRect();
+  const bubbleRect = bubble.getBoundingClientRect();
+
+  const x = bubbleRect.left - fieldRect.left + bubbleRect.width / 2;
+  const y = bubbleRect.top - fieldRect.top + bubbleRect.height / 2;
+
+  const now = Date.now();
+
+  // Pop within 1.5 seconds to continue the combo.
+  if (now - lastPopTime <= 1500) {
+    combo++;
+  } else {
+    combo = 1;
+  }
+
+  lastPopTime = now;
+
+  let points = isBonus ? POINTS_FOR_BONUS() : 10;
+
+  // Reward longer combos, up to an extra 20 points.
+  const comboBonus = Math.min(Math.max(0, combo - 1) * 2, 20);
+  points += comboBonus;
+
+  score += points;
+  bubblesPopped++;
+
+  const best = getBestScore();
+  if (score > best) saveBestScore(score);
+
+  bubble.classList.add("pop");
+  bubble.disabled = true;
+
+  showPopText(
+    Math.max(5, Math.min(x - 20, playfield.clientWidth - 85)),
+    Math.max(5, y - 15),
+    `+${points}${isBonus ? " ✨" : ""}`
+  );
+
+  playSound(isBonus ? "bonus" : "pop");
+  updateStats();
+
+  gameStatus.textContent = isBonus
+    ? `✨ Bonus bubble! You earned ${points} points!`
+    : combo > 1
+      ? `🔥 ${combo} combo! You earned ${points} points!`
+      : `🫧 Nice pop! +${points} points!`;
+
+  window.setTimeout(() => bubble.remove(), 220);
+}
+
+function startGame() {
+  clearGameTimers();
+  gameToken++;
+  const token = gameToken;
+
+  score = 0;
+  bubblesPopped = 0;
+  combo = 0;
+  lastPopTime = 0;
+  running = true;
+  timeLeft = currentLevel().time;
+
+  clearBubbles();
+  startMessage.hidden = true;
+  gameOverMessage.hidden = true;
+
+  startBtn.textContent = "▶️ Game Running";
+  gameStatus.textContent = "🫧 Go, go, go! Pop those bubbles!";
+
+  updateStats();
+  playSound("start");
+
+  timerInterval = window.setInterval(() => {
+    if (!running || token !== gameToken) return;
+
+    timeLeft--;
+    updateStats();
+
+    if (timeLeft <= 0) {
+      endGame();
+    }
+  }, 1000);
+
+  createBubble(token);
+}
+
+function endGame() {
+  if (!running) return;
+
+  running = false;
+  clearGameTimers();
+
+  // Invalidates any pending bubble spawn callback.
+  gameToken++;
+
+  clearBubbles();
+  finalScoreEl.textContent = score;
+  gameOverMessage.hidden = false;
+
+  startBtn.textContent = "▶️ Start Game";
+  gameStatus.textContent = "🏁 Time's up! Great job, little hero!";
+  playSound("end");
+  updateStats();
+}
+
+function resetToReady() {
+  running = false;
+  clearGameTimers();
+  gameToken++;
+
+  score = 0;
+  timeLeft = currentLevel().time;
+  bubblesPopped = 0;
+  combo = 0;
+  lastPopTime = 0;
+
+  clearBubbles();
+
+  startMessage.hidden = false;
+  gameOverMessage.hidden = true;
+
+  startBtn.textContent = "▶️ Start Game";
+  gameStatus.textContent = "Press Start Game to begin!";
+
+  updateStats();
+}
+
+startBtn.addEventListener("click", startGame);
+insideStartBtn.addEventListener("click", startGame);
+playAgainBtn.addEventListener("click", startGame);
+restartBtn.addEventListener("click", resetToReady);
+
+difficultySelect.addEventListener("change", () => {
+  updateLevelInfo();
+  resetToReady();
+});
+
+soundBtn.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+
+  soundBtn.textContent = soundEnabled
+    ? "🔊 Sound: ON"
+    : "🔇 Sound: OFF";
+
+  soundBtn.setAttribute("aria-pressed", String(soundEnabled));
+
+  if (soundEnabled) playSound("pop");
+});
+
+// Initialise the game screen.
+updateLevelInfo();
+resetToReady();
+
+
+  </script>
+</body>
+</html>

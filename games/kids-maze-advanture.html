@@ -1,0 +1,1285 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#e9f8ff">
+  <meta name="description" content="Find your way through a colourful maze in Kids Park Maze Adventure.">
+  <title>Kids Maze Adventure | Kids Park</title>
+  <!-- ================= FAVICON ================= -->
+
+<link
+    rel="shortcut icon"
+    href="../favicon.ico"
+    type="image/x-icon">
+  <style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&display=swap');
+
+:root {
+  --ink: #3e3969;
+  --muted: #706c93;
+  --pink: #ff79ad;
+  --purple: #8156d9;
+  --card: #fff;
+  --shadow: 0 8px 0 #dce1f7, 0 15px 30px #5362a013;
+}
+
+* { box-sizing: border-box; }
+
+html {
+  font-size: 18px;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Nunito", "Trebuchet MS", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 7% 8%, #ffe1f0 0, transparent 22rem),
+    radial-gradient(circle at 93% 15%, #d7f3ff 0, transparent 24rem),
+    #f7f8ff;
+}
+
+button, select { font: inherit; }
+button { -webkit-tap-highlight-color: transparent; }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 15px max(4%, calc((100% - 1240px) / 2));
+  background: #ffffffed;
+  border-bottom: 2px solid #e7eafa;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff, #ffe2ef);
+  box-shadow: 0 5px 0 #f1c4dc, 0 8px 14px #e6d8f8;
+  font-size: 2rem;
+}
+
+.brand b { color: var(--pink); }
+
+.brand small {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: .65rem;
+  font-weight: 800;
+}
+
+.header-pill {
+  padding: 9px 15px;
+  border: 2px solid #d9e9ff;
+  border-radius: 30px;
+  background: #eff7ff;
+  color: #4d73a5;
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.container {
+  width: min(1240px, 92%);
+  margin: 0 auto;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  margin: 28px 0;
+  padding: clamp(24px, 4vw, 42px);
+  overflow: hidden;
+  border: 2px solid white;
+  border-radius: 32px;
+  background: linear-gradient(120deg, #ffe8f3, #eee8ff 55%, #e0f7ff);
+  box-shadow: var(--shadow);
+}
+
+.hero-copy { max-width: 760px; }
+
+.eyebrow {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 22px;
+  background: white;
+  color: #8b56b6;
+  font-size: .8rem;
+  font-weight: 900;
+  letter-spacing: .5px;
+}
+
+h1 {
+  margin: 12px 0 10px;
+  font-size: clamp(2.1rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+h1 span { color: #8156d9; }
+
+.hero p {
+  max-width: 650px;
+  margin: 0;
+  color: #5e6688;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.hero-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.hero-tags span {
+  padding: 7px 12px;
+  border: 1px solid white;
+  border-radius: 20px;
+  background: #ffffffc9;
+  font-size: .82rem;
+  font-weight: 900;
+}
+
+.hero-art {
+  display: flex;
+  flex: 0 0 190px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 4rem;
+  filter: drop-shadow(0 7px 0 #8273aa25);
+  transform: rotate(-5deg);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 26px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+  padding: 17px;
+  border: 2px solid white;
+  border-radius: 23px;
+  background: white;
+  box-shadow: 0 6px 0 #dce4f8, 0 10px 20px #526ca40b;
+}
+
+.stat-card:nth-child(1) { background: linear-gradient(130deg, white, #fff0f7); }
+.stat-card:nth-child(2) { background: linear-gradient(130deg, white, #eff6ff); }
+.stat-card:nth-child(3) { background: linear-gradient(130deg, white, #fff8dd); }
+
+.stat-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 17px;
+  background: #f0eaff;
+  font-size: 1.7rem;
+}
+
+.stat-card small {
+  display: block;
+  color: var(--muted);
+  font-size: .82rem;
+  font-weight: 900;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 1.65rem;
+  line-height: 1.3;
+  font-weight: 900;
+}
+
+.game-layout {
+  display: grid;
+  grid-template-columns: minmax(255px, .76fr) minmax(0, 1.65fr);
+  align-items: start;
+  gap: 24px;
+}
+
+.panel {
+  min-width: 0;
+  padding: clamp(18px, 2.4vw, 28px);
+  border: 2px solid white;
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.panel h2 {
+  margin: 0 0 16px;
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.settings-panel label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: .98rem;
+  font-weight: 900;
+}
+
+select {
+  width: 100%;
+  min-height: 55px;
+  padding: 12px;
+  border: 2px solid #dfe3f7;
+  border-radius: 15px;
+  outline: none;
+  color: var(--ink);
+  background: #fbfbff;
+  font-size: .94rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+select:focus-visible, button:focus-visible {
+  outline: 3px solid #8156d9;
+  outline-offset: 3px;
+}
+
+.level-info {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 15px;
+  background: #f0f4ff;
+  color: #606b99;
+  font-size: .88rem;
+  font-weight: 800;
+}
+
+.how-to {
+  margin: 22px 0;
+  padding: 16px;
+  border: 2px dashed #dce3f8;
+  border-radius: 18px;
+  background: #f8faff;
+}
+
+.how-to h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.how-to ul {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.how-to li {
+  margin: 7px 0;
+  color: #626d90;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.btn {
+  width: 100%;
+  min-height: 56px;
+  margin: 6px 0;
+  padding: 13px 15px;
+  border: 0;
+  border-radius: 17px;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+  transition: transform .15s, filter .15s, box-shadow .15s;
+  touch-action: manipulation;
+}
+
+.btn:hover {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(2px);
+  box-shadow: none;
+}
+
+.btn-primary {
+  color: white;
+  background: linear-gradient(135deg, #ff79b1, #e85caa);
+  box-shadow: 0 5px 0 #c94a90;
+}
+
+.btn-secondary {
+  color: #5c5b9c;
+  background: #eaeaff;
+  box-shadow: 0 5px 0 #cdd0f4;
+}
+
+.btn-sound {
+  color: #317c78;
+  background: #e4fbf3;
+  box-shadow: 0 5px 0 #b9e7d9;
+}
+
+.tip {
+  margin: 20px 0 0;
+  padding: 14px;
+  border-radius: 16px;
+  background: #fff8e6;
+  color: #846b45;
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.play-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.play-heading h2 { margin-bottom: 4px; }
+
+.play-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.time-pill {
+  padding: 8px 13px;
+  border: 1px solid #ffdfc4;
+  border-radius: 22px;
+  background: #fff5e9;
+  color: #a96b36;
+  font-size: .95rem;
+  font-weight: 900;
+}
+
+.maze-frame {
+  display: grid;
+  place-items: center;
+  margin-top: 20px;
+  padding: clamp(9px, 2vw, 18px);
+  border: 3px dashed #d9d4fa;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #f7f4ff, #eefaff);
+}
+
+.maze {
+  display: grid;
+  width: 100%;
+  max-width: 650px;
+  aspect-ratio: 1;
+  overflow: hidden;
+  border: 4px solid #8a75d5;
+  border-radius: 14px;
+  background: #e7f8d8;
+  box-shadow: 0 6px 0 #c6b8ed, 0 12px 20px #7d73a622;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.maze-cell {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  background: linear-gradient(145deg, #f1ffdf, #e0f5c8);
+  font-size: clamp(12px, 2.7vw, 25px);
+}
+
+.maze-cell.wall {
+  background: linear-gradient(145deg, #b6a0ff, #8262d0);
+  box-shadow: inset 0 2px 0 #ffffff6e, inset 0 -3px 0 #6248af;
+}
+
+.maze-cell.path:nth-child(odd) {
+  background: linear-gradient(145deg, #f5ffe8, #e4f7d2);
+}
+
+.maze-cell.star-cell {
+  background: linear-gradient(145deg, #fff9c9, #ffe8a3);
+}
+
+.maze-cell.goal-cell {
+  background: linear-gradient(145deg, #d4fff0, #a5f1dc);
+}
+
+.maze-cell.player-cell {
+  z-index: 1;
+  background: linear-gradient(145deg, #ffe0f0, #ffc4df);
+}
+
+.player-emoji {
+  filter: drop-shadow(0 2px 0 #b27b9c66);
+  animation: playerBounce .5s ease;
+}
+
+.star-emoji {
+  filter: drop-shadow(0 2px 0 #c49a37);
+  animation: starTwinkle 1.2s ease-in-out infinite alternate;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px 18px;
+  margin: 16px 0 12px;
+  color: #686c91;
+  font-size: .85rem;
+  font-weight: 900;
+}
+
+.mobile-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+  margin: 18px auto 12px;
+}
+
+.middle-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.direction {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 60px;
+  border: 2px solid white;
+  border-radius: 18px;
+  background: linear-gradient(145deg, #fff, #eae8ff);
+  box-shadow: 0 5px 0 #c9c5ed, 0 8px 14px #6a60a018;
+  font-size: 1.55rem;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.direction:hover { transform: translateY(-2px); }
+.direction:active { transform: translateY(3px); box-shadow: none; }
+
+.keyboard-tip {
+  margin: 12px 0 0;
+  color: #777397;
+  font-size: .82rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.bottom-note {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 28px 0;
+  padding: 20px 24px;
+  border: 2px solid white;
+  border-radius: 23px;
+  background: linear-gradient(120deg, #e6fff3, #e8f2ff);
+  box-shadow: 0 6px 0 #d4e9e8;
+}
+
+.note-icon, .note-star { font-size: 2rem; }
+
+.bottom-note p { margin: 0; font-size: 1rem; }
+.bottom-note p b { font-size: 1.12rem; }
+.note-star { margin-left: auto; }
+
+footer {
+  padding: 28px 15px;
+  border-top: 2px solid #e5ecfb;
+  background: white;
+  text-align: center;
+}
+
+footer p { margin: 0; font-size: 1.02rem; font-weight: 900; }
+footer small { color: var(--muted); font-size: .86rem; }
+
+.modal-backdrop {
+  position: fixed;
+  z-index: 20;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #29244891;
+  backdrop-filter: blur(5px);
+}
+
+.modal-backdrop[hidden] { display: none; }
+
+.win-modal {
+  width: min(100%, 430px);
+  padding: 30px;
+  border: 3px solid white;
+  border-radius: 30px;
+  background: linear-gradient(145deg, #fff, #fff0f7);
+  box-shadow: 0 12px 0 #e4d1f1, 0 25px 70px #35214244;
+  text-align: center;
+  animation: modalPop .3s ease;
+}
+
+.win-emoji { font-size: 3rem; }
+
+.win-modal h2 {
+  margin: 8px 0;
+  font-size: 1.6rem;
+}
+
+.win-modal p { font-size: 1rem; }
+
+.final-score {
+  margin: 15px 0;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.final-score strong {
+  color: #8156d9;
+  font-size: 1.6rem;
+}
+
+@keyframes playerBounce {
+  from { transform: scale(.7); }
+  to { transform: scale(1); }
+}
+
+@keyframes starTwinkle {
+  from { transform: scale(.88) rotate(-8deg); }
+  to { transform: scale(1.08) rotate(8deg); }
+}
+
+@keyframes modalPop {
+  from { opacity: 0; transform: scale(.88); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (min-width: 1000px) {
+  .settings-panel { position: sticky; top: 18px; }
+}
+
+@media (max-width: 850px) {
+  .game-layout { grid-template-columns: 1fr; }
+  .settings-panel { order: 2; }
+  .play-panel { order: 1; }
+  .maze { max-width: 620px; }
+}
+
+@media (max-width: 600px) {
+  html { font-size: 17px; }
+
+  .topbar { padding: 12px 4%; }
+  .brand { font-size: 1.15rem; }
+  .brand-icon { width: 46px; height: 46px; border-radius: 15px; }
+  .header-pill { max-width: 145px; padding: 8px 10px; font-size: .72rem; text-align: center; }
+
+  .container { width: 94%; }
+
+  .hero {
+    margin: 20px 0;
+    padding: 23px 18px;
+    border-radius: 25px;
+  }
+
+  .hero-art { flex-basis: 95px; font-size: 2.8rem; }
+  .hero-tags { gap: 7px; }
+  .hero-tags span { font-size: .73rem; }
+
+  .stats { gap: 9px; }
+  .stat-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    padding: 11px;
+    border-radius: 18px;
+  }
+
+  .stat-icon { flex-basis: auto; width: 40px; height: 40px; font-size: 1.4rem; }
+  .stat-card small { font-size: .72rem; }
+  .stat-card strong { font-size: 1.4rem; }
+
+  .panel { padding: 17px; border-radius: 23px; }
+  .maze-frame { padding: 7px; border-radius: 18px; }
+  .maze { border-width: 3px; border-radius: 9px; }
+  .maze-cell.wall { box-shadow: inset 0 1px 0 #ffffff6e, inset 0 -2px 0 #6248af; }
+
+  .direction { width: 65px; height: 59px; }
+  .bottom-note { padding: 16px; gap: 10px; }
+}
+
+@media (max-width: 390px) {
+  html { font-size: 16px; }
+  .header-pill { max-width: 112px; }
+  .hero { gap: 4px; padding: 20px 13px; }
+  .hero-art { flex-basis: 65px; font-size: 2.1rem; }
+  .stats { gap: 7px; }
+  .stat-card { padding: 9px; }
+  .stat-card strong { font-size: 1.2rem; }
+  .direction { width: 59px; height: 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#" class="brand">
+      <span class="brand-icon">🐣</span>
+      <span>Kids <b>Park</b><small>Read. Imagine. Have Fun!</small></span>
+    </a>
+    <span class="header-pill">🧭 Little Explorers Club</span>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">🌈 EXPLORE • THINK • WIN</span>
+        <h1>Kids Maze <span>Adventure!</span></h1>
+        <p>Find the right path, collect magical stars and guide your little explorer to the rainbow finish!</p>
+        <div class="hero-tags">
+          <span>⭐ Collect stars</span>
+          <span>🧠 Solve the maze</span>
+          <span>🏁 Reach the goal</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <span>🧸</span><span>🌈</span><span>⭐</span>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Game statistics">
+      <article class="stat-card">
+        <span class="stat-icon">⭐</span>
+        <div><small>Your Score</small><strong id="score">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">👣</span>
+        <div><small>Moves</small><strong id="moves">0</strong></div>
+      </article>
+      <article class="stat-card">
+        <span class="stat-icon">🏆</span>
+        <div><small>Best Score</small><strong id="bestScore">0</strong></div>
+      </article>
+    </section>
+
+    <section class="game-layout">
+      <aside class="panel settings-panel">
+        <h2>🎮 Game Settings</h2>
+
+        <label for="difficulty">Choose difficulty</label>
+        <select id="difficulty">
+          <option value="easy">🌱 Easy — Little Maze</option>
+          <option value="medium">🌟 Medium — Tricky Maze</option>
+          <option value="hard">🚀 Hard — Big Adventure</option>
+        </select>
+
+        <div id="levelInfo" class="level-info">
+          🌼 Easy: Explore a small maze and find your way!
+        </div>
+
+        <div class="how-to">
+          <h3>🗺️ How to play</h3>
+          <ul>
+            <li>Move your explorer using the arrow buttons.</li>
+            <li>Collect all the ⭐ stars for bonus points.</li>
+            <li>Follow the paths. Walls block your way.</li>
+            <li>Reach 🏁 to finish the maze.</li>
+          </ul>
+        </div>
+
+        <button id="newMazeBtn" class="btn btn-primary" type="button">
+          🌈 New Maze
+        </button>
+        <button id="restartBtn" class="btn btn-secondary" type="button">
+          🔄 Restart Maze
+        </button>
+        <button id="soundBtn" class="btn btn-sound" type="button"
+          aria-pressed="true">🔊 Sound: ON</button>
+
+        <p class="tip">💡 Tip: Take your time, explore the paths and collect the stars!</p>
+      </aside>
+
+      <section class="panel play-panel">
+        <div class="play-heading">
+          <div>
+            <h2>🧭 Adventure Map</h2>
+            <p id="gameStatus" role="status" aria-live="polite">
+              Find the stars and reach the rainbow!
+            </p>
+          </div>
+          <div class="time-pill">⏱️ <strong id="time">0:00</strong></div>
+        </div>
+
+        <div class="maze-frame">
+          <div id="maze" class="maze" role="group" aria-label="Maze game board"></div>
+        </div>
+
+        <div class="legend">
+          <span>🧸 You</span>
+          <span>⭐ Star</span>
+          <span>🏁 Finish</span>
+          <span>🧱 Wall</span>
+        </div>
+
+        <div class="mobile-controls" aria-label="Maze movement controls">
+          <button class="direction up" data-direction="up" aria-label="Move up" type="button">⬆️</button>
+          <div class="middle-controls">
+            <button class="direction" data-direction="left" aria-label="Move left" type="button">⬅️</button>
+            <button class="direction" data-direction="down" aria-label="Move down" type="button">⬇️</button>
+            <button class="direction" data-direction="right" aria-label="Move right" type="button">➡️</button>
+          </div>
+        </div>
+
+        <p class="keyboard-tip">⌨️ Computer: use your keyboard arrow keys or W, A, S, D.</p>
+      </section>
+    </section>
+
+    <section class="bottom-note">
+      <span class="note-icon">🧠</span>
+      <p><b>Every maze is a new adventure!</b><br>Practise planning, patience and problem-solving while having fun.</p>
+      <span class="note-star">✨</span>
+    </section>
+  </main>
+
+  <footer>
+    <p>🐣 Kids Park · Read. Imagine. Have Fun!</p>
+    <small>Made for little explorers with love 💖</small>
+  </footer>
+
+  <div class="modal-backdrop" id="winModal" hidden>
+    <section class="win-modal" role="dialog" aria-modal="true" aria-labelledby="winTitle">
+      <div class="win-emoji">🏆🌈⭐</div>
+      <h2 id="winTitle">Amazing, little explorer!</h2>
+      <p id="winMessage">You found your way through the maze!</p>
+      <div class="final-score">Your Score: <strong id="finalScore">0</strong></div>
+      <button id="playAgainBtn" class="btn btn-primary" type="button">🎉 Play Again</button>
+    </section>
+  </div>
+
+  <script>
+
+const mazeElement = document.getElementById("maze");
+const scoreElement = document.getElementById("score");
+const movesElement = document.getElementById("moves");
+const bestScoreElement = document.getElementById("bestScore");
+const timeElement = document.getElementById("time");
+
+const difficultySelect = document.getElementById("difficulty");
+const levelInfo = document.getElementById("levelInfo");
+const gameStatus = document.getElementById("gameStatus");
+
+const newMazeBtn = document.getElementById("newMazeBtn");
+const restartBtn = document.getElementById("restartBtn");
+const soundBtn = document.getElementById("soundBtn");
+const winModal = document.getElementById("winModal");
+const winMessage = document.getElementById("winMessage");
+const finalScoreElement = document.getElementById("finalScore");
+const playAgainBtn = document.getElementById("playAgainBtn");
+
+const LEVELS = {
+  easy: {
+    rows: 7,
+    cols: 7,
+    stars: 4,
+    description: "🌼 Easy: Explore a small maze and find your way!"
+  },
+  medium: {
+    rows: 11,
+    cols: 11,
+    stars: 7,
+    description: "🌟 Medium: More paths and more stars to discover!"
+  },
+  hard: {
+    rows: 15,
+    cols: 15,
+    stars: 10,
+    description: "🚀 Hard: A big maze for brave explorers!"
+  }
+};
+
+const DIRECTIONS = {
+  up:    { dr: -1, dc: 0, wall: "top",    opposite: "bottom" },
+  down:  { dr: 1,  dc: 0, wall: "bottom", opposite: "top" },
+  left:  { dr: 0,  dc: -1, wall: "left",  opposite: "right" },
+  right: { dr: 0,  dc: 1,  wall: "right", opposite: "left" }
+};
+
+let grid = [];
+let rows = 0;
+let cols = 0;
+let player = { row: 0, col: 0 };
+let goal = { row: 0, col: 0 };
+let stars = new Set();
+let collectedStars = new Set();
+
+let score = 0;
+let moves = 0;
+let elapsedSeconds = 0;
+let soundEnabled = true;
+let gameWon = false;
+let audioContext = null;
+let timerInterval = null;
+
+// Each difficulty has its own saved best score.
+function storageKey() {
+  return `kidsParkMazeBest_${difficultySelect.value}`;
+}
+
+function getBestScore() {
+  try {
+    return Number(localStorage.getItem(storageKey())) || 0;
+  } catch {
+    return 0;
+  }
+}
+
+function saveBestScore(value) {
+  try {
+    localStorage.setItem(storageKey(), String(value));
+  } catch {
+    // The game can still be played if storage is unavailable.
+  }
+}
+
+function updateStats() {
+  scoreElement.textContent = score;
+  movesElement.textContent = moves;
+  bestScoreElement.textContent = getBestScore();
+
+  const minutes = Math.floor(elapsedSeconds / 60);
+  const seconds = elapsedSeconds % 60;
+  timeElement.textContent =
+    `${minutes}:${String(seconds).padStart(2, "0")}`;
+}
+
+function playSound(kind = "move") {
+  if (!soundEnabled) return;
+
+  try {
+    const AudioContextClass =
+      window.AudioContext || window.webkitAudioContext;
+
+    if (!AudioContextClass) return;
+
+    if (!audioContext) audioContext = new AudioContextClass();
+
+    if (audioContext.state === "suspended") audioContext.resume();
+
+    const sounds = {
+      move: { frequency: 450, duration: 0.06 },
+      star: { frequency: 950, duration: 0.16 },
+      win: { frequency: 700, duration: 0.22 },
+      blocked: { frequency: 230, duration: 0.07 }
+    };
+
+    const note = sounds[kind] || sounds.move;
+    const oscillator = audioContext.createOscillator();
+    const gain = audioContext.createGain();
+
+    oscillator.type = kind === "star" || kind === "win" ? "sine" : "triangle";
+    oscillator.frequency.setValueAtTime(
+      note.frequency,
+      audioContext.currentTime
+    );
+
+    if (kind === "star" || kind === "win") {
+      oscillator.frequency.linearRampToValueAtTime(
+        note.frequency * 1.35,
+        audioContext.currentTime + note.duration
+      );
+    }
+
+    gain.gain.setValueAtTime(0.0001, audioContext.currentTime);
+    gain.gain.exponentialRampToValueAtTime(
+      0.12,
+      audioContext.currentTime + 0.012
+    );
+    gain.gain.exponentialRampToValueAtTime(
+      0.0001,
+      audioContext.currentTime + note.duration
+    );
+
+    oscillator.connect(gain);
+    gain.connect(audioContext.destination);
+
+    oscillator.start();
+    oscillator.stop(audioContext.currentTime + note.duration + 0.02);
+  } catch {
+    // Sound is optional.
+  }
+}
+
+// Create a maze using a randomized depth-first search.
+// Every open cell is reachable from the starting point.
+function generateMaze() {
+  const level = LEVELS[difficultySelect.value];
+  rows = level.rows;
+  cols = level.cols;
+
+  grid = Array.from({ length: rows }, () =>
+    Array.from({ length: cols }, () => ({
+      top: true,
+      right: true,
+      bottom: true,
+      left: true,
+      visited: false
+    }))
+  );
+
+  const stack = [{ row: 0, col: 0 }];
+  grid[0][0].visited = true;
+
+  while (stack.length > 0) {
+    const current = stack[stack.length - 1];
+    const choices = [];
+
+    for (const direction of Object.values(DIRECTIONS)) {
+      const nextRow = current.row + direction.dr;
+      const nextCol = current.col + direction.dc;
+
+      if (
+        nextRow >= 0 && nextRow < rows &&
+        nextCol >= 0 && nextCol < cols &&
+        !grid[nextRow][nextCol].visited
+      ) {
+        choices.push({
+          row: nextRow,
+          col: nextCol,
+          direction
+        });
+      }
+    }
+
+    if (choices.length === 0) {
+      stack.pop();
+      continue;
+    }
+
+    const choice = choices[Math.floor(Math.random() * choices.length)];
+    const currentCell = grid[current.row][current.col];
+    const nextCell = grid[choice.row][choice.col];
+
+    currentCell[choice.direction.wall] = false;
+    nextCell[choice.direction.opposite] = false;
+    nextCell.visited = true;
+
+    stack.push({ row: choice.row, col: choice.col });
+  }
+
+  // The finish is at the bottom-right corner.
+  goal = { row: rows - 1, col: cols - 1 };
+
+  // Place stars on different cells, not on the start or finish.
+  const availableCells = [];
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      if (
+        !(row === 0 && col === 0) &&
+        !(row === goal.row && col === goal.col)
+      ) {
+        availableCells.push(`${row},${col}`);
+      }
+    }
+  }
+
+  for (let i = availableCells.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [availableCells[i], availableCells[j]] =
+      [availableCells[j], availableCells[i]];
+  }
+
+  stars = new Set(availableCells.slice(0, level.stars));
+  collectedStars = new Set();
+
+  player = { row: 0, col: 0 };
+}
+
+function renderMaze() {
+  mazeElement.innerHTML = "";
+  mazeElement.style.gridTemplateColumns = `repeat(${cols}, minmax(0, 1fr))`;
+  mazeElement.style.gridTemplateRows = `repeat(${rows}, minmax(0, 1fr))`;
+
+  const fragment = document.createDocumentFragment();
+
+  for (let row = 0; row < rows; row++) {
+    for (let col = 0; col < cols; col++) {
+      const cellData = grid[row][col];
+      const cell = document.createElement("div");
+
+      cell.className = "maze-cell path";
+      cell.style.borderTop = cellData.top
+        ? "3px solid #8262d0" : "3px solid transparent";
+      cell.style.borderRight = cellData.right
+        ? "3px solid #8262d0" : "3px solid transparent";
+      cell.style.borderBottom = cellData.bottom
+        ? "3px solid #8262d0" : "3px solid transparent";
+      cell.style.borderLeft = cellData.left
+        ? "3px solid #8262d0" : "3px solid transparent";
+
+      if (cellData.top && cellData.right &&
+          cellData.bottom && cellData.left) {
+        cell.classList.add("wall");
+      }
+
+      if (row === goal.row && col === goal.col) {
+        cell.classList.add("goal-cell");
+      }
+
+      const key = `${row},${col}`;
+
+      if (stars.has(key) && !collectedStars.has(key)) {
+        cell.classList.add("star-cell");
+        cell.textContent = "⭐";
+        cell.setAttribute("aria-label", "Star to collect");
+      }
+
+      if (row === goal.row && col === goal.col) {
+        cell.textContent = "🏁";
+        cell.setAttribute("aria-label", "Finish");
+      }
+
+      if (row === player.row && col === player.col) {
+        cell.classList.add("player-cell");
+        cell.innerHTML = '<span class="player-emoji">🧸</span>';
+        cell.setAttribute("aria-label", "Your explorer");
+      }
+
+      fragment.appendChild(cell);
+    }
+  }
+
+  mazeElement.appendChild(fragment);
+}
+
+function collectStar() {
+  const key = `${player.row},${player.col}`;
+
+  if (!stars.has(key) || collectedStars.has(key)) return;
+
+  collectedStars.add(key);
+  score += 100;
+
+  playSound("star");
+  gameStatus.textContent = "✨ Amazing! You collected a star! +100 points";
+}
+
+function movePlayer(directionName) {
+  if (gameWon) return;
+
+  const direction = DIRECTIONS[directionName];
+  if (!direction) return;
+
+  const currentCell = grid[player.row][player.col];
+
+  // Walls prevent movement.
+  if (currentCell[direction.wall]) {
+    playSound("blocked");
+    gameStatus.textContent = "🧱 Oops! A wall is blocking this way.";
+    return;
+  }
+
+  player.row += direction.dr;
+  player.col += direction.dc;
+  moves++;
+
+  collectStar();
+
+  // Show movement status unless a star was just collected.
+  const key = `${player.row},${player.col}`;
+  if (!stars.has(key) || collectedStars.has(key)) {
+    gameStatus.textContent = "🧭 Keep going! Find the rainbow finish!";
+  }
+
+  playSound("move");
+
+  if (player.row === goal.row && player.col === goal.col) {
+    finishGame();
+    return;
+  }
+
+  updateStats();
+  renderMaze();
+}
+
+function finishGame() {
+  gameWon = true;
+
+  const allStarsCollected = collectedStars.size === stars.size;
+  const completionBonus = 200;
+  const starBonus = allStarsCollected ? 200 : 0;
+  score += completionBonus + starBonus;
+
+  if (score > getBestScore()) {
+    saveBestScore(score);
+  }
+
+  updateStats();
+  renderMaze();
+
+  gameStatus.textContent = "🏆 You reached the rainbow finish!";
+  winMessage.textContent = allStarsCollected
+    ? "Amazing! You found the finish and collected every star!"
+    : "Fantastic! You reached the finish. Try collecting every star next time!";
+
+  finalScoreElement.textContent = score;
+  winModal.hidden = false;
+  playSound("win");
+}
+
+function resetTimer() {
+  if (timerInterval !== null) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+
+  elapsedSeconds = 0;
+
+  timerInterval = window.setInterval(() => {
+    if (!gameWon) {
+      elapsedSeconds++;
+      updateStats();
+    }
+  }, 1000);
+}
+
+function updateLevelInfo() {
+  levelInfo.textContent = LEVELS[difficultySelect.value].description;
+}
+
+function startNewMaze() {
+  gameWon = false;
+  winModal.hidden = true;
+  score = 0;
+  moves = 0;
+  elapsedSeconds = 0;
+
+  generateMaze();
+  renderMaze();
+  resetTimer();
+  updateLevelInfo();
+  updateStats();
+
+  gameStatus.textContent = "🌈 Find the stars and reach the rainbow!";
+}
+
+function restartMaze() {
+  // Restart the same maze layout with all stars restored.
+  gameWon = false;
+  winModal.hidden = true;
+  score = 0;
+  moves = 0;
+  elapsedSeconds = 0;
+  player = { row: 0, col: 0 };
+  collectedStars = new Set();
+
+  renderMaze();
+  resetTimer();
+  updateStats();
+
+  gameStatus.textContent = "🔄 Maze restarted! Let's try again!";
+}
+
+document.querySelectorAll("[data-direction]").forEach(button => {
+  button.addEventListener("click", () => {
+    movePlayer(button.dataset.direction);
+  });
+});
+
+document.addEventListener("keydown", event => {
+  const keyMap = {
+    ArrowUp: "up",
+    ArrowDown: "down",
+    ArrowLeft: "left",
+    ArrowRight: "right",
+    w: "up",
+    W: "up",
+    s: "down",
+    S: "down",
+    a: "left",
+    A: "left",
+    d: "right",
+    D: "right"
+  };
+
+  const direction = keyMap[event.key];
+  if (!direction) return;
+
+  // Do not intercept keys while typing in an input or select.
+  if (event.target.closest("input, textarea, select")) return;
+
+  event.preventDefault();
+  movePlayer(direction);
+});
+
+newMazeBtn.addEventListener("click", startNewMaze);
+restartBtn.addEventListener("click", restartMaze);
+playAgainBtn.addEventListener("click", startNewMaze);
+
+difficultySelect.addEventListener("change", () => {
+  startNewMaze();
+});
+
+soundBtn.addEventListener("click", () => {
+  soundEnabled = !soundEnabled;
+  soundBtn.textContent = soundEnabled
+    ? "🔊 Sound: ON"
+    : "🔇 Sound: OFF";
+
+  soundBtn.setAttribute("aria-pressed", String(soundEnabled));
+
+  if (soundEnabled) playSound("move");
+});
+
+// Start the first maze.
+startNewMaze();
+
+  </script>
+</body>
+</html>
